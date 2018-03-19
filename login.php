@@ -78,7 +78,9 @@
                 <?php if ($erreur == true) echo "<div class='invalid-feedback'> Nom d'utilisateur ou mot de passe erroné </div>"; ?>
                 </div>
 
-                <button class="btn center" type="submit">connexion</button>
+                <div class="w-100-center">
+                    <button class="btn" type="submit">connexion</button>
+                </div>
 
             </form>
         
