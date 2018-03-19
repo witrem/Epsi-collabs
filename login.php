@@ -44,8 +44,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, userscalable=no">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-        <link rel="stylesheet" href="Css/login.css">
-        <link rel="stylesheet" href="Css/main.css">
+        <link rel="stylesheet" href="/Css/login.css">
+        <link rel="stylesheet" href="/Css/main.css">
         <title>Identifiez-vous</title>
 
     </head>
@@ -59,7 +59,7 @@
             <hr>
             <br>
 
-            <form action="login.php" method="post">
+            <form action="/login.php" method="post">
 
                 <label class="login-resp-label">Nom d'Utilisateur</label>
                 <div class="input-group mb-3 input-group-login">

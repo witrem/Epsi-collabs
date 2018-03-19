@@ -1,7 +1,10 @@
 <?php
 
-    include_once $_SERVER['document_ROOT'] . "Includes/main.php";
+    include_once "/home/romain/Documents/Epsi-collabs/Includes/main.php";
     session_start();
+
+    // Afficher les erreurs à l'écran
+    ini_set('display_errors', 1);
 
 ?>
 
@@ -27,7 +30,7 @@
     });
     </script>
 
-    <?php include "Includes/nav.php" ?>
+    <?php include "/home/romain/Documents/Epsi-collabs/Includes/nav.php" ?>
 
     <input type="text" id="search" placeholder="Compétences, artices">
  
@@ -50,6 +53,19 @@
                 </tr>
             </tbody>
         </table>
+    </section>
+
+    <section id="article_container">
+
+        <?php 
+            $article = new Article("title", "description de type qualitey", array("http://localhost:88/Assets/Images/profil.jpg")); 
+            $article->print_this();
+            $article = new Article("title", "description de type qualitey", array("http://localhost:88/Assets/Images/profil.jpg")); 
+            $article->print_this();
+            $article = new Article("title", "description de type qualitey", array("http://localhost:88/Assets/Images/profil.jpg")); 
+            $article->print_this();
+        ?>
+
     </section>
 
     <?php include('Modals/m_profil.php'); ?>
