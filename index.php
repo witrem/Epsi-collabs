@@ -1,10 +1,14 @@
 <?php
 
-    include_once "/home/romain/Documents/Epsi-collabs/Includes/main.php";
+    include_once $_SERVER['DOCUMENT_ROOT'] . "/Includes/main.php";
     session_start();
 
     // Afficher les erreurs à l'écran
     ini_set('display_errors', 1);
+
+    if (!is_login()) {
+        header('location: http://' . $_SERVER['HTTP_HOST'] . '/login.php');
+    }
 
 ?>
 
@@ -27,46 +31,56 @@
     <script>
     $(document).ready(function(){
         $('.modal-trigger').leanModal();
+        $('select').material_select();
     });
     </script>
+    <script src="Js/search.js"></script>
 
     <?php include "/home/romain/Documents/Epsi-collabs/Includes/nav.php" ?>
 
-    <input type="text" id="search" placeholder="Compétences, artices">
+    <div id="search">
+        <div class="input-field col s12 search_select">
+            <select id="comp_select">
+                <option value="0" disabled selected>Compétences</option>
+                <?php
+                    Competence::select_print(1, "PHP");
+                    Competence::select_print(2, "Javascript");
+                    Competence::select_print(3, "Office");
+                    Competence::select_print(4, "C++");
+                    Competence::select_print(5, "UML");
+                ?>
+            </select>
+        </div><div class="input-field col s12 search_select">
+            <select id="lvl_select">
+                <option value="" disabled selected>Niveau</option>
+                <option value="1">B1</option>
+                <option value="2">B2</option>
+                <option value="3">B3</option>
+                <option value="4">I4</option>
+                <option value="5">I5</option>
+            </select>
+        </div><div class="input-field col s12 search_select">
+            <select id="campus_select">
+                <option value="" disabled selected>Campus</option>
+                <?php
+                    Competence::select_print(0, "PHP");
+                    Competence::select_print(1, "Javascript");
+                    Competence::select_print(2, "Office");
+                    Competence::select_print(3, "C++");
+                    Competence::select_print(4, "UML");
+                ?>
+            </select>
+        </div><div class="search_select">
+            <div id="search_btn" class="btn clickable" type="submit" onclick="search()">Rechercher</button>
+        </div>
+    </div>
  
-    <section id="competences" class="txt-center txt-light card border hide">
-        <table>
-            <thead>
-                <tr>
-                    <th id="comp-title" class="txt-center">Compétences</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="clickable">PHP</td>
-                </tr>
-                <tr>
-                    <td class="clickable">Javascript</td>
-                </tr>
-                <tr>
-                    <td class="clickable">C++</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <section id="article_container">
-
-        <?php 
-            $article = new Article("title", "description de type qualitey", array("http://localhost:88/Assets/Images/profil.jpg")); 
-            $article->print_this();
-            $article = new Article("title", "description de type qualitey", array("http://localhost:88/Assets/Images/profil.jpg")); 
-            $article->print_this();
-            $article = new Article("title", "description de type qualitey", array("http://localhost:88/Assets/Images/profil.jpg")); 
-            $article->print_this();
-        ?>
+    <section id="found_user" class="txt-center txt-light card border hide">
+        
+        
 
     </section>
 
-    <?php include('Modals/m_profil.php'); ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Modals/m_profil.php"; ?>
+
 </html>

@@ -1,12 +1,14 @@
 <?php 
 
     // load or reload a session ! have to be the first line
-    include 'Include/main.php';
+    include $_SERVER['DOCUMENT_ROOT'] . 'Includes/main.php';
     session_start();
 
     $erreur = false;
 
     if(isset($_POST) && isset($_POST['login']) && isset($_POST['password'])) {
+
+        sleep(1);
         
         if($_POST['login'] == "admin") {
             
