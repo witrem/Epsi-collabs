@@ -29,7 +29,7 @@
 
     <?php include "Includes/nav.php" ?>
 
-      <input type="text" id="search" placeholder="Compétences, artices">
+    <input type="text" id="search" placeholder="Compétences, artices">
  
     <section id="competences" class="txt-center txt-light card border hide">
         <table>
