@@ -6,6 +6,8 @@
 .clickable{cursor:pointer}
 .border{border: 1px solid #9e9e9e}
 .rounded{border-radius: .25em}
+.mh-auto{margin-left:auto;margin-right:auto}
+.center{}
 
 body{color:#4e4e4e}
 
@@ -35,7 +37,7 @@ body{color:#4e4e4e}
 }
 
 @media screen and (min-width: 992px) {
-    .ml-1{margin-left:1em}
+    .ml-1-resp-992{margin-left:1em}
 }
 
 @media screen and (max-width: 992px) {
