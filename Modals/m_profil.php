@@ -6,16 +6,13 @@
     </head>
     <body>
         
-        <div id="modalprofile" class="modal">
-            <div class="modal-content">
-                <h4 class="titreprofil">Profil</h4>
-             <div class="row alignement">
-                  <div class="col s12">
-                <img src="Images/profil.jpg" alt="" class="circle responsive-img" width="15%">
+<div id="modalprofile" class="modal">
+<div class="modal-content">
+ <h4 class="titreprofil">Profil</h4>
+     <div class="row alignement">
+         <div class="col s12">
+                <img src="Assets/Images/profil.jpg" alt="" class="circle responsive-img" width="15%">
                 
-       
-
-
       <table class="infoprofil">
         <thead>
           <tr>
@@ -58,7 +55,7 @@
       </table>
             
 
-
+        <a class="btn-floating btn-large waves-effect waves-light purple darken-2"><i class="material-icons">create</i></a>
                     
                </div>
             </div>
