@@ -50,15 +50,12 @@
                     </tbody>
                 </table>
 
-
-                <a class="btn-floating btn-large waves-effect waves-light purple darken-2">
-                    <i class="material-icons">create</i>
-                </a>
-
+                <div class="modaloption">
+                <a class="btn-floating btn-large modal-trigger bg-epsi modalbutton modal-action modal-close" href="#modalmodifprofile"><i class="material-icons">create</i></a>
+                <a href="#!" class="modal-action modal-close btn-floating btn-large waves-effect waves-light red modalbutton"><i class="material-icons">close</i></a>
             </div>
         </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Fermer</a>
-        </div>
+     
     </div>
+</div>
 </div>

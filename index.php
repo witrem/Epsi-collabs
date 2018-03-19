@@ -1,6 +1,6 @@
 <?php
 
-    include_once $_SERVER['document_ROOT'] . "Includes/main.php";
+    include_once "Includes/main.php";
     session_start();
 
 ?>
@@ -52,5 +52,6 @@
         </table>
     </section>
 
-    <?php include('Modals/m_profil.php'); ?>
+     <?php include('Modals/m_profil.php'); ?>
+     <?php include('Modals/m_modifprofil.php'); ?>
 </html>

@@ -87,7 +87,7 @@
                         </tbody>
                         
                     </table>
-                    <button class="btn-floating btn-large waves-effect waves-light purple darken-2" type="submit"><i class="material-icons">create</i></button>
+                    <button class="btn-floating btn-large waves-effect waves-light purple darken-3" type="submit"><i class="material-icons">check</i></button>
                     </form>
                 </div>
             </div>
