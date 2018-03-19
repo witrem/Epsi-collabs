@@ -1,5 +1,12 @@
 .alignement {
-    
-    margin: 0 auto;
-    left:50%;
+    width: auto;
+    height: auto;
+   
+    text-align: center;
+     
+}
+
+.infoprofil {
+    width:50%;
+      margin-left: 25%;
 }
