@@ -1,22 +1,27 @@
 <?php 
 
     // load or reload a session ! have to be the first line
-    include $_SERVER['DOCUMENT_ROOT'] . 'Includes/main.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/Includes/main.php';
     session_start();
+
+        // Afficher les erreurs à l'écran
+        ini_set('display_errors', 1);
 
     $erreur = false;
 
     if(isset($_POST) && isset($_POST['login']) && isset($_POST['password'])) {
 
         sleep(1);
-        
-        if($_POST['login'] == "admin") {
-            
 
-            $_SESSION['user']['id'] = "0";
+        $answer = Data_base::login_test($_POST['login'], $_POST['password']);
+        
+        if($answer != false) {
+
+            
+            $_SESSION['user']['id'] = $answer['id_Personne'];
             
            
-            $_SESSION['user']['login'] = "admin";
+            $_SESSION['user']['login'] = $_POST['login'];
            
            
             $_SESSION['connected'] = true;
@@ -68,7 +73,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text login-label" style="width: 150px;">Nom d'Utilisateur</span>
                     </div>
-                    <input type="text" name="login" class="login-input form-control<?php if ($erreur == true) echo " is-invalid"; ?>" value="<?php if (isset($_COOKIE['login'])) echo $_COOKIE['login'];?>" >
+                    <input type="text" name="login" class="login-input form-control<?php if ($erreur == true) echo " invalid"; ?>" value="<?php if (isset($_COOKIE['login'])) echo $_COOKIE['login'];?>" >
                 </div>
 
                 <label class="login-resp-label">Mot De Passe</label>
@@ -76,8 +81,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text login-label" style="width: 150px;">Mot De Passe</span>
                     </div>
-                    <input type="password" name="password" class="login-input form-control<?php if ($erreur == true) echo " is-invalid"; ?>"value="<?php if (isset($_COOKIE['login'])) echo $_COOKIE['login'];?>" >
-                <?php if ($erreur == true) echo "<div class='invalid-feedback'> Nom d'utilisateur ou mot de passe erroné </div>"; ?>
+                    <input type="password" name="password" class="login-input form-control<?php if ($erreur == true) echo " invalid"; ?>"value="<?php if (isset($_COOKIE['login'])) echo $_COOKIE['login'];?>" >
                 </div>
 
                 <div class="w-100-center">

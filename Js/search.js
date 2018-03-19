@@ -3,4 +3,27 @@ function search() {
         alert("Selectionnez une compétence à approfondir");
         return;
     }
+
+    data = 'comp=' + $("#comp_select").val();
+    
+
+    if ($("#lvl_select").val() != null) {
+        data += '&lvl=' + $("#lvl_select").val();
+    }
+
+    if ($("#campus_select").val() != null) {
+        data += '&campus=' + $("#campus_select").val();
+    }
+
+    console.log(data);
+
+    $.ajax({
+        url: "http://localhost:88/Modules/search.php",
+        type: "POST",
+        data: data
+    }).done(function(data) {
+        console.log(data);
+    });
+
 }
+

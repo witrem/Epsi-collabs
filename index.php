@@ -11,7 +11,7 @@
     }
 
 ?>
-
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 
@@ -36,50 +36,50 @@
     </script>
     <script src="Js/search.js"></script>
 
-    <?php include "/home/romain/Documents/Epsi-collabs/Includes/nav.php" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Includes/nav.php" ?>
 
     <div id="search">
         <div class="input-field col s12 search_select">
             <select id="comp_select">
                 <option value="0" disabled selected>Compétences</option>
                 <?php
-                    Competence::select_print(1, "PHP");
-                    Competence::select_print(2, "Javascript");
-                    Competence::select_print(3, "Office");
-                    Competence::select_print(4, "C++");
-                    Competence::select_print(5, "UML");
+                    Competence::select_print();
                 ?>
             </select>
         </div><div class="input-field col s12 search_select">
             <select id="lvl_select">
                 <option value="" disabled selected>Niveau</option>
-                <option value="1">B1</option>
-                <option value="2">B2</option>
-                <option value="3">B3</option>
-                <option value="4">I4</option>
-                <option value="5">I5</option>
+                <option value="B1">B1</option>
+                <option value="B2">B2</option>
+                <option value="B3">B3</option>
+                <option value="I4">I4</option>
+                <option value="I5">I5</option>
             </select>
         </div><div class="input-field col s12 search_select">
             <select id="campus_select">
                 <option value="" disabled selected>Campus</option>
                 <?php
-                    Competence::select_print(0, "PHP");
-                    Competence::select_print(1, "Javascript");
-                    Competence::select_print(2, "Office");
-                    Competence::select_print(3, "C++");
-                    Competence::select_print(4, "UML");
+                    Campus::select_print();
                 ?>
             </select>
         </div><div class="search_select">
-            <div id="search_btn" class="btn clickable" type="submit" onclick="search()">Rechercher</button>
+            <div id="search_btn" class="btn clickable" onclick="search()">Rechercher</div>
         </div>
     </div>
- 
-    <section id="found_user" class="txt-center txt-light card border hide">
-        
-        
 
+    <div id="search_btn_resp" class="btn clickable" onclick="search()">
+        <i class="material-icons">search</i>
+    </div>
+
+    <section id="founded-user" class="black">
+        text
     </section>
+ 
+    <div id="found-user" class="black">
+        
+        text
+
+    </div>
 
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Modals/m_profil.php"; ?>
 

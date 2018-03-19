@@ -1,7 +1,9 @@
 <?php
 
-    include_once $_SERVER['DOCUMENT_ROOT'] . "/Class/Article.php";
+    include_once $_SERVER['DOCUMENT_ROOT'] . "/Class/User.php";
     include_once $_SERVER['DOCUMENT_ROOT'] . "/Class/Competence.php";
+    include_once $_SERVER['DOCUMENT_ROOT'] . "/Class/Data_base.php";
+    include_once $_SERVER['DOCUMENT_ROOT'] . "/Class/Campus.php";
 
     function is_login() {
 
