@@ -5,7 +5,7 @@
 
     // Afficher les erreurs à l'écran
     ini_set('display_errors', 1);
-
+    
     if (!is_login()) {
         header('location: http://' . $_SERVER['HTTP_HOST'] . '/login.php');
     }
