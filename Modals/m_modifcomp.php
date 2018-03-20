@@ -3,8 +3,6 @@
     <div class="modal-content">
         <script>
 
-
-
             $('.chips').material_chip();
             $('.chips-initial').material_chip({
                 data: [{
@@ -41,14 +39,9 @@
                 <label>Vos talents</label>
                 <div class="chips chips-autocomplete"></div>
 
-
-
-
-
                 <a class="btn-floating btn-large waves-effect waves-light bg-epsi modalbutton"><i class="material-icons">cached</i></a>
 
                 <a class="modal-action modal-close btn-floating btn-large waves-effect waves-light red  modalbutton"><i class="material-icons">close</i></a>
-
 
             </div>
         </div>

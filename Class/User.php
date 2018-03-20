@@ -23,6 +23,33 @@
 
         }
 
+        public function change_avatar_url($id, $ext) {
+
+            $db = Data_base::connect();
+
+            $req = $db->prepare("UPDATE `personnes` SET `Photo` = :photo WHERE `personnes`.`id_Personne` = :idpersonne");
+
+            $req->execute(array(
+                ":idpersonne" => $id,
+                ":photo" => $id . "." . $ext
+            ));
+
+        }
+
+        public function get_avatar_url($id) {
+
+            $db = Data_base::connect();
+            
+            $req = $db->prepare("SELECT p . Photo from personnes p where p . id_Personne = :idpersonne");
+            
+            $req->execute(array(":idpersonne" => $_SESSION['user']['id']));
+            
+            $answer = $req->fetch();
+
+            return $answer['Photo'];
+
+        }
+
         public function search_result_print() {
 
             echo "
