@@ -15,8 +15,8 @@
         public function __construct($id) {
 
             $this->id = $id;
-            $this->nom = "alexis";
-            $this->prenom = "witrem";
+            $this->nom = "alexis de parmesan";
+            $this->prenom = "witrem du bois joli";
             $this->level = "B1";
             $this->campus = "Nantes";
             $this->avatar_url = "http://localhost:88/Assets/Images/profil.jpg";
@@ -26,16 +26,25 @@
         public function search_result_print() {
 
             echo "
-                <div class='card-panel grey lighten-5 z-depth-1'>
-                    <div class='row valign-wrapper'>
-                        <div class='col s2'>
-                            <img src='images/yuna.jpg' alt='avatar_img' class='circle responsive-img'>
-                        </div>
-                        <div class='col s10'>
-                            <span class='black-text'>
-                                This is a square image. Add the 'circle' class to it to make it appear circular.
-                            </span>
-                        </div>
+                <div class='user shadow border'>
+                    <div>
+                        <img src='" . $this->avatar_url . "' alt='avatar_img'>
+                    </div>
+                    <div>
+                        <span class='user-name'>" . $this->nom . " - " . $this->prenom . "</span><br>
+                        " . $this->level . " - " . $this->campus . "
+                    </div>
+                </div>
+            ";
+
+            echo "
+                <div class='user shadow border'>
+                    <div>
+                        <img src='" . $this->avatar_url . "' alt='avatar_img'>
+                    </div>
+                    <div>
+                        <span class='user-name'>" . $this->nom . " - " . $this->prenom . "</span><br>
+                        " . $this->level . " - " . $this->campus . "
                     </div>
                 </div>
             ";

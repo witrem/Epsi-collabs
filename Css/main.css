@@ -1,17 +1,5 @@
 body{color:#4e4e4e}
 
-#found-user {
-    width: calc(60% - 20px);
-    margin: 1em 20%;
-    padding: 0 10px;
-}
-
-#founded-user {
-    width: calc(60% - 20px);
-    margin: 1em 20%;
-    padding: 0 10px;
-}
-
 /* ===========================================================
     #cms
    =========================================================== */
@@ -30,6 +18,8 @@ body{color:#4e4e4e}
 .h-auto{height: auto}
 .w-90{width:90%}
 .w-auto{width:auto}
+.shadow{-webkit-box-shadow:0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
+    box-shadow:0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);}
 
 /* ===========================================================
     #nav bar
@@ -84,7 +74,7 @@ body{color:#4e4e4e}
 
 @media screen and (max-width: 992px) {
     #search {
-        width: calc(96% - 12px);
+        width: calc(96% - 22px);
         margin: 1em 2%;
     }
 }
@@ -139,18 +129,65 @@ body{color:#4e4e4e}
     #search result
    =========================================================== */
 
+#founded-user {
+    width: calc(60% - 20px);
+    margin: 2em 20%;
+}
 
 
 @media screen and (max-width: 992px) {
-    #found_user {
-        width: calc(96% - 12px);
-        margin: 1em 2%;
+    #founded-user {
+        width: calc(96% - 20px);
+        margin: 2em 2%;
     }
 }
 
 @media screen and (max-width: 600px) {
-    #found_user {
+    #founded-user {
         width: 100%;
-        margin: 0;
+        margin: 2em 0;
+    }
+}
+
+/* ===========================================================
+    #user insearch result
+   =========================================================== */
+
+.user {
+    position: relative;
+    width: calc(48% - 2px);
+    margin: 1em 1% 0 1%;
+    height: 100px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.user>:nth-child(1) {
+    height: 100%;
+}
+
+.user>:nth-child(2) {
+    position: absolute;
+    padding-left: 3px;
+    top: 0;
+    height: 100%;
+}
+
+.user img {
+    height: 100%;
+    width: auto;
+}
+
+.user-name {
+    font-size: 150%;
+}
+
+.user>* {
+    display: inline-block;
+}
+
+@media screen and (max-width: 1260px) {
+    .user {
+        width: calc(98% - 2px);
     }
 }

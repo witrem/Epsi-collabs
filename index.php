@@ -71,13 +71,14 @@
         <i class="material-icons">search</i>
     </div>
 
-    <section id="founded-user" class="black">
-        text
-    </section>
- 
-    <div id="found-user" class="black">
+    <div id="founded-user" class="">
         
-        text
+        <?php
+
+            $user = new User(0);
+            $user->search_result_print();
+
+        ?>
 
     </div>
 
