@@ -64,17 +64,19 @@
                 </div>
             ";
 
-            echo "
-                <div class='user shadow border'>
-                    <div>
-                        <img src='" . $this->avatar_url . "' alt='avatar_img'>
-                    </div>
-                    <div>
-                        <span class='user-name'>" . $this->nom . " - " . $this->prenom . "</span><br>
-                        " . $this->level . " - " . $this->campus . "
-                    </div>
-                </div>
-            ";
+        }
+
+        public function get_campus($id) {
+
+            $db = Data_base::connect();
+
+            $req = $db->prepare("SELECT id_Campus FROM personnes WHERE id_Personne = :id");
+
+            $req->execute(array(":id" => $id));
+
+            $answer = $req->fetch();
+
+            return $answer['id_Campus'];
 
         }
 
