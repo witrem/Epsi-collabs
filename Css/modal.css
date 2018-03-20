@@ -2,31 +2,31 @@
     width: auto;
     height: auto;
     text-align: center;
-     
+
 }
 
 .infoprofil {
     width:50%;
-     margin-left: 25%;
+    margin-left: 25%;
 }
 .alignementbtn {
-    
-  position:relative;
-    
+
+    position:relative;
+
 }
 
 .modaloption {
-  
-   
+
+
 }
 
 .modalbutton {
-    
- margin : 15px;
+
+    margin : 15px;
 }
 
 .modifdate {
-    
+
     height:600px;
-    
+
 }

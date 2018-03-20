@@ -1,7 +1,7 @@
 <?php 
 
     // load or reload a session ! have to be the first line
-    include 'Include/main.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/Includes/main.php';
     session_start();
 
     $erreur = false;
