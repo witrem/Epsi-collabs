@@ -5,6 +5,9 @@ body{color:#4e4e4e}
    =========================================================== */
 
 .bg-epsi{background-color:#4b3b84}
+.bg-epsi2{background-color:#00A4BB}
+.bg-epsi3{background-color:#5CAE3E}
+.bg-epsi4{background-color:#FFE419}
 .mw-75{max-height:75%}
 .mt-1{margin-top:1em}
 .txt-center{text-align:center}
@@ -108,6 +111,25 @@ body{color:#4e4e4e}
     font-size: 220%;
 }
 
+.inscription {
+    
+    width: 60%;
+    margin-left: 20%;
+    margin-top:3%;
+    height: 65%;
+    padding-top: 20px;
+}
+
+.logfichier {
+    
+    width: auto;
+    margin-left: 20%;
+    margin-top:3%;
+    height: 25%;
+    padding-top: 20px;
+    font-size:30px;
+}
+
 @media screen and (max-width: 600px) {
     #search {
         width: 100%;
@@ -123,6 +145,7 @@ body{color:#4e4e4e}
     #search_btn_resp {
         display: block;
     }
+
 }
 
 /* ===========================================================

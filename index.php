@@ -1,6 +1,7 @@
 <?php
 
     include_once $_SERVER['DOCUMENT_ROOT'] . "/Includes/main.php";
+
     session_start();
 
     // Afficher les erreurs à l'écran
@@ -83,5 +84,35 @@
     </div>
 
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Modals/m_profil.php"; ?>
+
+    <?php include "Includes/nav.php" ?>
+
+    <input type="text" id="search" placeholder="Compétences, artices">
+ 
+    <section id="competences" class="txt-center txt-light card border hide">
+        <table>
+            <thead>
+                <tr>
+                    <th id="comp-title" class="txt-center">Compétences</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="clickable">PHP</td>
+                </tr>
+                <tr>
+                    <td class="clickable">Javascript</td>
+                </tr>
+                <tr>
+                    <td class="clickable">C++</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+     <?php include('Modals/m_profil.php'); ?>
+     <?php include('Modals/m_modifprofil.php'); ?>
+    <?php include('Modals/m_modifdate.php'); ?>
+    <?php include('Modals/m_modifcomp.php'); ?>
 
 </html>
