@@ -54,4 +54,6 @@
 
      <?php include('Modals/m_profil.php'); ?>
      <?php include('Modals/m_modifprofil.php'); ?>
+    <?php include('Modals/m_modifdate.php'); ?>
+    <?php include('Modals/m_modifcomp.php'); ?>
 </html>

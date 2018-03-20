@@ -1,4 +1,7 @@
 .bg-epsi{background-color:#4b3b84}
+.bg-epsi2{background-color:#00A4BB}
+.bg-epsi3{background-color:#5CAE3E}
+.bg-epsi3{background-color:#FFE419}
 .mw-75{max-height:75%}
 .mt-1{margin-top:1em}
 .txt-center{text-align:center}
@@ -40,6 +43,16 @@ body{color:#4e4e4e}
     padding-top: 20px;
 }
 
+.logfichier {
+    
+    width: auto;
+    margin-left: 20%;
+    margin-top:3%;
+    height: 25%;
+    padding-top: 20px;
+    font-size:30px;
+    
+}
 
 @media screen and (min-width: 992px) {
     .ml-1-resp-992{margin-left:1em}

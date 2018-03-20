@@ -49,11 +49,12 @@
 
                     </tbody>
                 </table>
-
-                <div class="modaloption">
+                <a class="btn-floating btn-large modal-trigger bg-epsi4 modalbutton modal-action modal-close" href="#"><i class="material-icons">event_available</i></a>
+                <a class="btn-floating btn-large modal-trigger bg-epsi3 modalbutton modal-action modal-close" href="#modalmodifcomp"><i class="material-icons">build</i></a>
+                <a class="btn-floating btn-large modal-trigger bg-epsi2 modalbutton modal-action modal-close" href="#modalmodifdate"><i class="material-icons">alarm_add</i></a>
                 <a class="btn-floating btn-large modal-trigger bg-epsi modalbutton modal-action modal-close" href="#modalmodifprofile"><i class="material-icons">create</i></a>
                 <a href="#!" class="modal-action modal-close btn-floating btn-large waves-effect waves-light red modalbutton"><i class="material-icons">close</i></a>
-            </div>
+            
         </div>
      
     </div>
