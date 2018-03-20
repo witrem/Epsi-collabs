@@ -1,3 +1,9 @@
+body{color:#4e4e4e}
+
+/* ===========================================================
+    #cms
+   =========================================================== */
+
 .bg-epsi{background-color:#4b3b84}
 .bg-epsi2{background-color:#00A4BB}
 .bg-epsi3{background-color:#5CAE3E}
@@ -7,31 +13,102 @@
 .txt-center{text-align:center}
 .txt-left{text-align:left}
 .clickable{cursor:pointer}
-.border{border: 1px solid #9e9e9e}
+.border{border: 1px solid #bebebe}
 .rounded{border-radius: .25em}
 .mh-auto{margin-left:auto;margin-right:auto}
 .w-100-center{width:100%;text-align:center}
+.h-90{height:90%}
+.h-auto{height: auto}
+.w-90{width:90%}
+.w-auto{width:auto}
+.shadow{-webkit-box-shadow:0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
+    box-shadow:0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);}
 
-body{color:#4e4e4e}
+/* ===========================================================
+    #nav bar
+   =========================================================== */
+
+@media screen and (min-width: 992px) {
+    .ml-1-resp-992{margin-left:1em}
+}
+
+#slide_menu_btn {
+    position: absolute;
+    left: 15px;
+    display: none;
+}
+
+@media screen and (max-width: 992px) {
+    #slide_menu_btn {
+        display: block;
+    }
+}
+
+#slide_menu {
+    position: fixed;
+    text-align: center;
+    width: 210px;
+    height: calc(100vh - 56px);
+    top: 56px;
+    left: -210px;
+    z-index: 1000;
+    transition-duration: 0.2s;
+    color: #fff;
+    font-size: 120%;
+}
+
+#slide_menu ul  { list-style: none; margin: 0; padding: 0;}
+#slide_menu li  { margin: 10px 0; }
+#slide_menu a,
+#slide_menu a:hover { text-decoration: none; color: inherit;}
+
+/* ===========================================================
+    #search bar
+   =========================================================== */
 
 #search {
-    width: calc(60% - 12px);
+    width: calc(60% - 22px);
     margin: 1em 20%;
-    border: 1px solid #9e9e9e;
+    border: 1px solid #bebebe;
     -webkit-box-shadow:0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
     box-shadow:0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
-    padding-left: 10px;
+    padding: 0 10px;
 }
 
-#competences {
+@media screen and (max-width: 992px) {
+    #search {
+        width: calc(96% - 22px);
+        margin: 1em 2%;
+    }
+}
+
+.search_select {
+    width: 25%;
+    padding: 0 .25em;
+    text-align: center;
+    display: inline-block;
+}
+
+#search_btn {
+    width: 90%;
+    padding: 0;
+    text-align: center;
+}
+
+#search_btn_resp {
+    display: none;
     position: fixed;
-    top: 200px;
-    left: 10px;
-    width: 17%;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 50px;
+    width: 56px;
+    height: 56px;
+    line-height: 56px;
 }
 
-#comp-title {
-    border-bottom: 1px solid #6e6e6e;
+#search_btn_resp>i {
+    margin-left: -15px;
+    font-size: 220%;
 }
 
 .inscription {
@@ -51,16 +128,89 @@ body{color:#4e4e4e}
     height: 25%;
     padding-top: 20px;
     font-size:30px;
-    
 }
 
-@media screen and (min-width: 992px) {
-    .ml-1-resp-992{margin-left:1em}
+@media screen and (max-width: 600px) {
+    #search {
+        width: 100%;
+        margin: 0;
+        border: none;
+    }
+    .search_select {
+        width: 33.33%;
+    }
+    #search>:nth-child(4) {
+        display: none;
+    }
+    #search_btn_resp {
+        display: block;
+    }
+
 }
+
+/* ===========================================================
+    #search result
+   =========================================================== */
+
+#founded-user {
+    width: calc(60% - 20px);
+    margin: 2em 20%;
+}
+
 
 @media screen and (max-width: 992px) {
-    #search {
-        width: calc(96% - 12px);
-        margin: 1em 2%;
+    #founded-user {
+        width: calc(96% - 20px);
+        margin: 2em 2%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #founded-user {
+        width: 100%;
+        margin: 2em 0;
+    }
+}
+
+/* ===========================================================
+    #user insearch result
+   =========================================================== */
+
+.user {
+    position: relative;
+    width: calc(48% - 2px);
+    margin: 1em 1% 0 1%;
+    height: 100px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.user>:nth-child(1) {
+    height: 100%;
+}
+
+.user>:nth-child(2) {
+    position: absolute;
+    padding-left: 3px;
+    top: 0;
+    height: 100%;
+}
+
+.user img {
+    height: 100%;
+    width: auto;
+}
+
+.user-name {
+    font-size: 150%;
+}
+
+.user>* {
+    display: inline-block;
+}
+
+@media screen and (max-width: 1260px) {
+    .user {
+        width: calc(98% - 2px);
     }
 }
