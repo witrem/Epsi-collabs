@@ -36,3 +36,4 @@ if (isset($_POST['Besoins'])) {
     }
 }
     
+header('location: http://' . $_SERVER['HTTP_HOST']);
