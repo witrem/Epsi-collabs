@@ -74,7 +74,7 @@ $(document).ready(function(){
         },
         eventSources: [
             {
-                url: 'http://epsi-collabs.fr/Modules/EventFeeder.php',
+                url: 'http://www.epsi-collabs.fr/Modules/EventFeeder.php',
                 type: 'POST',
                 data: {
                     comp: comp,
