@@ -18,7 +18,7 @@ function search() {
     console.log(data)
 
     $.ajax({
-        url: "http://epsi-collabs.fr/Modules/search.php",
+        url: "http://www.epsi-collabs.fr/Modules/search.php",
         type: "POST",
         data: data
     }).done(function(data) {
