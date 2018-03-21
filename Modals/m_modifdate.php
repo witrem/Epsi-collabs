@@ -5,19 +5,48 @@
         <h4 class="titreprofil">Créer une Disponibilité</h4>
         <div class="row alignement">
             <div class="col s12">
-                <label for="date">Date</label>
-                <input id="date" type="text" class="datepicker">
-
-                <div class="input-field col s12">
-                    <select multiple>
-                        <option value="1">Soutien Campus</option>
-                        <option value="2">Visio</option>
-                        <option value="3">Mail</option>
-                    </select>
-                    <label>Préférence de soutien</label>
-                </div>
-
-                <script>
+             
+                <form action="traitementdispo.php" method="POST">
+                <label for="date">Date Début</label>
+                <input id="date" type="text" name="DateDebut"  class="datepicker" required>
+                
+                 <label for="date">Créneaux</label>
+                <div class="input-field col s12" >
+    <select name="hdebut">
+      <option value="08:00:00">8h</option>
+      <option value="09:00:00">9h</option>
+      <option value="10:00:00">10h</option>
+       <option value="11:00:00">11h</option>
+      <option value="12:00:00">12h</option>
+      <option value="13:00:00">13h</option>
+       <option value="14:00:00">14h</option>
+      <option value="15:00:00">15h</option>
+      <option value="16:00:00">16h</option>
+       <option value="17:00:00">17h</option>
+      <option value="18:00:00">18h</option>
+      <option value="19:00:00">19h</option>
+    </select>
+    <label>Heure début</label>
+  </div>
+  <div class="input-field col s12" >
+    <select name="hfin">
+      <option value="08:00:00">8h</option>
+      <option value="09:00:00">9h</option>
+      <option value="10:00:00">10h</option>
+       <option value="11:00:00">11h</option>
+      <option value="12:00:00">12h</option>
+      <option value="13:00:00">13h</option>
+       <option value="14:00:00">14h</option>
+      <option value="15:00:00">15h</option>
+      <option value="16:00:00">16h</option>
+       <option value="17:00:00">17h</option>
+      <option value="18:00:00">18h</option>
+      <option value="19:00:00">19h</option>
+    </select>
+    <label>Heure Fin</label>
+  </div>
+                
+    <script>
 
                     $(document).ready(function () {
                         $('select').material_select();
@@ -43,8 +72,11 @@
                     });
 
                 </script>
+                
+               
 
-                <a class="btn-floating btn-large waves-effect waves-light bg-epsi modalbutton"><i class="material-icons">add_alarm</i></a>
+                <button class="btn-floating btn-large waves-effect waves-light bg-epsi modalbutton" type="submit"><i class="material-icons">add_alarm</i></button>
+                </form>
 
                 <a class="modal-action modal-close btn-floating btn-large waves-effect waves-light red  modalbutton"><i class="material-icons">close</i></a>
 

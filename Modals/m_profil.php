@@ -5,7 +5,7 @@
         <?php
         $db = new PDO("mysql:host=" . config::SERVERNAME . ";dbname=" . config::DBNAME, config::USER, config::PASSWORD, array(PDO::ATTR_PERSISTENT => true, PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
         $req = $db->prepare("select p.Photo from personnes p where p.id_Personne= :idpersonne");
-        $req->bindValue(':idpersonne', 2);
+        $req->bindValue(':idpersonne', 6);
         $req->execute();
         $resultat = $req->fetchAll();
         ?>

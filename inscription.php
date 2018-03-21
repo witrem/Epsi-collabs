@@ -14,7 +14,7 @@
 
     </head>
     <body>
-        <?php include "Includes/nav.php" ?>
+        
 
         <script>
             $(document).ready(function () {
@@ -28,26 +28,26 @@
                 <h4>Inscription</h4>
                 <div class="col s12">
 
-
+                    <form action="TraitementInscription.php" method="POST">
                     <table class="infoprofil">
-                        <form action="" method="">
+                       
                         <tbody>
                             <tr>
                                 <td>Nom</td>
                                 <td><div class="input-field inline">
-                                        <input id="nom" type="text" class="validate"></div></td>
+                                        <input name="nom" id="nom" type="text" class="validate"></div></td>
 
                             </tr>
                             <tr>
                                 <td>Prénom</td>
                                 <td><div class="input-field inline">
-                                        <input id="prenom" type="text" class="validate"></div></td>
+                                        <input name="prenom" id="prenom" type="text" class="validate"></div></td>
 
                             </tr>
                             <tr>
                                 <td>Campus</td>
                                 <td><div class="input-field col s12">
-                                        <select>
+                                        <select name="campus">
 
                                             <option value="1">Aras</option>
                                             <option value="2">Bordeau</option>
@@ -66,13 +66,13 @@
                             <tr>
                                 <td>Niveau</td>
                                 <td><div class="input-field col s12">
-                                        <select>
+                                        <select name="niveau">
 
-                                            <option value="1">B1</option>
-                                            <option value="2">B2</option>
-                                            <option value="3">B3</option>
-                                            <option value="4">I4</option>
-                                            <option value="5">I5</option>
+                                            <option value="B1">B1</option>
+                                            <option value="B2">B2</option>
+                                            <option value="B3">B3</option>
+                                            <option value="I4">I4</option>
+                                            <option value="I5">I5</option>
                                         </select>
 
                                     </div></td>
@@ -80,14 +80,35 @@
                             </tr>
                             <tr>
                                 <td>Email</td>
-                                <td><input id="nom" type="email" class="validate"></td>
+                                <td><input id="nom" name="email" type="email" class="validate"></td>
                             </tr>
-
+                            <tr>
+                         <td>Mot de Passe</td>
+   
+                         <td>
+                <input id="password" name="password1" type="password" class="validate">
+                
+                         </td>
+                    </tr>
+            
+                    <tr>
+                         <td>Confirmation</td>
+                         <td>
+            
+                <input id="password" name="password2" type="password" class="validate">
+                
+            </td>
+            </tr>
+                
+</div>
+                             
+ 
+                      
 
                         </tbody>
-                        
+                         
                     </table>
-                    <button class="btn-floating btn-large waves-effect waves-light purple darken-3" type="submit"><i class="material-icons">check</i></button>
+                   <button id="ins_submit_btn"class="btn-floating btn-large waves-effect waves-light purple darken-3" type="submit"><i class="material-icons">check</i></button>
                     </form>
                 </div>
             </div>
