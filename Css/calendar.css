@@ -1,10 +1,13 @@
 #menu {
-    position: fixed;
-    top: 64px;
+    position: absolute;
+    top: 0;
+    padding-top: 64px;
     left: 0;
-    height: calc(100vh - 64px);
+    height: 100vh;
     width: 300px;
     z-index: 300;
+    background-color: white;
+    transition-duration: 0.2s;
 }
 
 #calendar_wrapper {

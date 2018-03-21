@@ -51,7 +51,9 @@
 
     <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/Includes/nav.php' ?>
 
-    <div id="menu" class="">
+    <div id="menu">
+
+        <div class="clickable btn_menu_calendar_resp"><i class="material-icons">menu</i></div>
 
         <div class="input-field w-90 self-centered">
             <select id="campus_select">

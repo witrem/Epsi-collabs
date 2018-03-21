@@ -57,6 +57,13 @@
                 ?>
             </select>
         </div><div class="input-field col s12 search_select">
+            <select id="campus_select">
+                <option value="0" selected>Campus</option>
+                <?php
+                    Campus::select_print();
+                ?>
+            </select>
+        </div><div class="input-field col s12 search_select">
             <select id="lvl_select">
                 <option value="0" selected>Niveau</option>
                 <option value="B1">B1</option>
@@ -64,13 +71,6 @@
                 <option value="B3">B3</option>
                 <option value="I4">I4</option>
                 <option value="I5">I5</option>
-            </select>
-        </div><div class="input-field col s12 search_select">
-            <select id="campus_select">
-                <option value="0" selected>Campus</option>
-                <?php
-                    Campus::select_print();
-                ?>
             </select>
         </div><div class="search_select">
             <div id="search_btn" class="btn clickable" onclick="search()">Rechercher</div>
