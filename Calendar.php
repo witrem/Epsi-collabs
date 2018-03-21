@@ -32,10 +32,9 @@
     
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
-    <!-- <script src='fullcalendar/lib/jquery.min.js'></script> -->
     <script src='fullcalendar/lib/moment.min.js'></script>
     <script src='fullcalendar/fullcalendar.js'></script>
-    <script src='fullcalendar/locale/fr.js'></script>
+    <script src='fullcalendar/locale/fr.js'></script>   
     <script src="noUiSlider/nouislider.js"></script>
     
     <title>Epsi Collabs</title>

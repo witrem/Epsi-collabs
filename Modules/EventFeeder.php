@@ -2,13 +2,13 @@
 
     include_once $_SERVER['DOCUMENT_ROOT'] . "/Includes/main.php";
 
-     // Afficher les erreurs à l'écran
-     ini_set('display_errors', 1);
+    // Afficher les erreurs à l'écran
+    ini_set('display_errors', 1);
 
-    /*if (!isset($_POST) || !isset($_POST['comp']) || !isset($_POST['campus'])) {
+    if (!isset($_POST) || !isset($_POST['comp']) || !isset($_POST['campus'])) {
         header('location: http://' . $_SERVER['HTTP_HOST'] . '/Erreur/nop.html');
         exit();
-    }*/
+    }
 
     header("Content-type: text/javascript");
 
@@ -17,8 +17,8 @@
     $statment = $db->prepare("SELECT *, (SELECT Prenom FROM personnes p WHERE p . id_Personne = r . id_Personne) as titre FROM rencontres r WHERE id_Competence = :comp AND id_Campus = :campus");
 
     $answer = $statment->execute(array(
-        ":comp" => $_GET['comp'],
-        ":campus" => $_GET['campus']
+        ":comp" => $_POST['comp'],
+        ":campus" => $_POST['campus']
     ));
 
     $answer = $statment->fetchAll(PDO::FETCH_ASSOC);

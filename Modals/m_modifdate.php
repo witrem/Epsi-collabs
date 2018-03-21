@@ -125,11 +125,11 @@
         console.log(data)
 
         $.ajax({
-            url: "http://yuumii.ovh/Modules/AddEvent.php",
+            url: "http://localhost:88/Modules/AddEvent.php",
             type: "POST",
             data: data
         }).done(function(data) {
-            console.log(data);
+            console.log("pass");
         });
 
     }

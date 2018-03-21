@@ -12,17 +12,18 @@ class User {
     private $unmaitrised_comp;
     private $dates;
 
-    public function __construct($id) {
+    public function __construct() {
 
     }
 
-    public function init($nom, $prenom, $level, $campus, $avatar_url) {
+    public function init($nom, $prenom, $level, $campus, $avatar_url, $id) {
 
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->level = $level;
         $this->campus = $campus;
         $this->avatar_url = $avatar_url;
+        $this->id = $id;
 
     }
 
@@ -55,9 +56,9 @@ class User {
 
     public function search_result_print() {
         echo "
-            <div class='user shadow border'>
+            <div class='user shadow border clickable' onclick='document.location.href=\"http://" . $_SERVER['HTTP_HOST'] . "/User.php?id=" . $this->id . "\"'>
                 <div>
-                    <img src='" . $this->avatar_url . "' alt='avatar_img'>
+                    <img src='http://" . $_SERVER['HTTP_HOST'] . '/Assets/Avatar/' .  $this->avatar_url . "' alt='avatar_img'>
                 </div>
                 <div>
                     <span class='user-name'>" . $this->nom . " - " . $this->prenom . "</span><br>
@@ -97,6 +98,40 @@ class User {
         } else {
             return false;
         }
+
+    }
+
+    public function get_user_info($id) {
+
+        $db = Data_base::connect();
+
+        $req = $db->prepare("SELECT p . Nom, p . Prenom, p . Email, p . Niveau, ca . Nom as Nom_Campus, p . Description, p . Social1, p . Social2, p . Social3, p . Photo FROM personnes p
+        join campus ca on p . id_campus = ca . id_campus join propose pr on pr . id_Personne = p . id_Personne
+        where p . id_Personne = :idpersonne");
+        
+        $req->bindValue(':idpersonne', $id);
+        
+        $req->execute();
+        
+        return $req->fetch();
+
+    }
+
+    public function get_comp_propose($id) {
+
+        $db = Data_base::connect();
+
+        $req = $db->prepare("SELECT cp . Nom FROM personnes p
+        join campus ca on p . id_campus = ca . id_campus 
+        join propose pr on pr . id_Personne = p . id_Personne
+        join competences cp on cp . id_Competence = pr . id_Competence
+        where p . id_Personne = :idpersonne");
+
+        $req->bindValue(':idpersonne', $id);
+        
+        $req->execute();
+        
+        return $req->fetchAll(PDO::FETCH_ASSOC);
 
     }
 

@@ -27,14 +27,14 @@ if (!is_login()) {
 
     <div class="modal-content">
         <?php
-            $db = Data_base::connect();
-            $req = $db->prepare("select p.Nom,p.Prenom,p.Email,p.Niveau,ca.Nom as Nom_Campus,p.Description,p.Social1,p.Social2,p.Social3,p.Photo, co.Nom as Nom_Competence from personnes p "
-                    . "join campus ca on p.id_campus = ca.id_campus join propose pr on pr.id_Personne=p.id_Personne "
-                    . "join competences co on co.id_Competence=pr.id_Competence "
-                    . "where p.id_Personne= :idpersonne");
-            $req->bindValue(':idpersonne', $_SESSION['user']['id']);
-            $req->execute();
-            $resultat = $req->fetchAll();
+           
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+            } else {
+                $id = $_SESSION['user']['id'];
+            }
+            $result = User::get_user_info($id);
+
         ?>
 
         <div id="login-wrapper" class="card mh-auto profiluser"> 
@@ -54,7 +54,7 @@ if (!is_login()) {
                     </nav>
                     <div id="test1" class="col s12">
 
-                        <img src="/Assets/Avatar/<?php echo $resultat[0]['Photo']; ?>" alt="" class="circle responsive-img photo" width="15%">
+                        <img src="/Assets/Avatar/<?php echo $result[0]['Photo']; ?>" alt="" class="circle responsive-img photo" width="15%">
                         <table class="infoprofil">
 
                             <thead>
@@ -67,57 +67,59 @@ if (!is_login()) {
                             <tbody>
                                 <tr>
                                     <td>Nom</td>
-                                    <td><?php echo $resultat[0]['Nom']; ?></td>
+                                    <td><?php echo $result['Nom']; ?></td>
 
                                 </tr>
                                 <tr>
                                     <td>Prénom</td>
-                                    <td><?php echo $resultat[0]['Prenom']; ?></td>
+                                    <td><?php echo $result['Prenom']; ?></td>
 
                                 </tr>
                                 <tr>
                                     <td>Description</td>
-                                    <td><?php echo $resultat[0]['Description']; ?></td>
+                                    <td><?php echo $result['Description']; ?></td>
 
                                 </tr>
                                 <tr>
                                     <td>Campus</td>
-                                    <td><?php echo $resultat[0]['Nom_Campus']; ?></td>
+                                    <td><?php echo $result['Nom_Campus']; ?></td>
 
                                 </tr>
                                 <tr>
                                     <td>Niveau</td>
-                                    <td><?php echo $resultat[0]['Niveau']; ?></td>
+                                    <td><?php echo $result['Niveau']; ?></td>
 
                                 </tr>
                                 <tr>
                                     <td>Email</td>
-                                    <td><?php echo $resultat[0]['Email']; ?></td>
+                                    <td><?php echo $result['Email']; ?></td>
                                 </tr>
                                 <tr>
                                     <td>Social 1</td>
-                                    <td><?php echo $resultat[0]['Social1']; ?></td>
+                                    <td><?php echo $result['Social1']; ?></td>
                                 </tr>
                                 <tr>
                                     <td>Social 2</td>
-                                    <td><?php echo $resultat[0]['Social2']; ?></td>
+                                    <td><?php echo $result['Social2']; ?></td>
                                 </tr>
                                 <tr>
                                     <td>Social 3</td>
-                                    <td><?php echo $resultat[0]['Social3']; ?></td>
+                                    <td><?php echo $result['Social3']; ?></td>
                                 </tr>
 
                             </tbody>
                         </table> 
                         <div class="Talents">
                             <p class="comptext">Super Pouvoir</p>
+
                             <?php
-                                    foreach ($resultat as $ligne) {
-                                        echo "<div class='chip'>",$ligne['Nom_Competence'],"</div>";
-                                    }
+
+                                $result = User::get_comp_propose($id);
+                                foreach ($result as $ligne) {
+                                    echo "<div class='chip'>",$ligne['Nom'],"</div>";
+                                }
+                            
                             ?>
-                            
-                            
                           
                         </div>
                     </div>
