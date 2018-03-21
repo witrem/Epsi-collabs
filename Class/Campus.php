@@ -15,9 +15,13 @@
 
             $answer = $statment->fetchAll(PDO::FETCH_ASSOC);
 
+            $campus = User::get_campus($_SESSION['user']['id']);
+
             foreach ($answer as &$comp) {
                 
-                echo "<option value=" . $comp['id_Campus'] . ">" . $comp['Nom'] . "</option>";
+                echo "<option value=" . $comp['id_Campus'];
+                if ($comp['id_Campus'] == $campus) echo ' selected';
+                echo ">" . $comp['Nom'] . "</option>";
 
             }
 

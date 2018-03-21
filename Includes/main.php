@@ -4,6 +4,7 @@
     include_once $_SERVER['DOCUMENT_ROOT'] . "/Class/Competence.php";
     include_once $_SERVER['DOCUMENT_ROOT'] . "/Class/Data_base.php";
     include_once $_SERVER['DOCUMENT_ROOT'] . "/Class/Campus.php";
+    include_once $_SERVER['DOCUMENT_ROOT'] . "/Class/Event.php";
 
     function is_login() {
 

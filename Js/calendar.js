@@ -1,5 +1,11 @@
 $(document).ready(function(){
 
+    campus = $("#campus_select").val();
+    
+    comp = $("#comp_select").val();
+
+    console.log(campus + ' . ' + comp)
+
     $('#calendar').fullCalendar({
         height: 'parent',
         columnHeader: true,
@@ -8,15 +14,16 @@ $(document).ready(function(){
         eventSources: [
             {
                 url: 'http://localhost:88/Modules/EventFeeder.php',
-                type: 'POST',
+                type: 'GET',
                 data: {
-                    comp: 1
+                    comp: comp,
+                    campus: campus
                 },
                 error: function() {
                     alert('there was an error while fetching events!');
                 },
-                color: 'yellow',
-                textColor: 'black'
+                color: 'blue',
+                textColor: 'white'
             }
           ]
     });
@@ -25,8 +32,23 @@ $(document).ready(function(){
 
 });
 
-function log() {
-
-    console.log("pass");
-
+function update() {
+    $('#calendar').fullCalendar('removeEventSources');
+    campus = $("#campus_select").val();
+    comp = $("#comp_select").val();
+    console.log(campus + ' . ' + comp)
+    $('#calendar').fullCalendar('addEventSource', {
+            url: 'http://localhost:88/Modules/EventFeeder.php',
+            type: 'GET',
+            data: {
+                comp: comp,
+                campus: campus
+            },
+            error: function() {
+                alert('there was an error while fetching events!');
+            },
+            color: 'blue',
+            textColor: 'white'
+        }
+    )
 }

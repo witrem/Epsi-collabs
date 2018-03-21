@@ -21,10 +21,12 @@ nav{z-index:900}
 .h-90{height:90%}
 .h-auto{height: auto}
 .w-90{width:90%}
+.w-100{width:100%}
 .w-auto{width:auto}
 .shadow{-webkit-box-shadow:0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
     box-shadow:0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);}
 .fixed{position:fixed}
+.self-centered{margin:0 auto 0 auto}
 
 /* ===========================================================
     #nav bar
