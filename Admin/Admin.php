@@ -50,7 +50,7 @@
 
         </script>
 
-        <div id="login-wrapper" class="card mh-auto inscription"> 
+        <div id="login-wrapper" class="card mh-auto inscription card-responsive"> 
 
             <div class="row alignement">
                 <h4>Parametrage</h4>

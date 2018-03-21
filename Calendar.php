@@ -26,9 +26,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
     <link rel="stylesheet" href="noUiSlider/nouislider.css">
-    <link rel="stylesheet" href="Css/main.css">
     <link rel="stylesheet" href="Css/modal.css">
     <link rel="stylesheet" href="Css/calendar.css">
+    <link rel="stylesheet" href="Css/main.css">
     
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>

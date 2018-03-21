@@ -13,19 +13,27 @@ if (!is_login()) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, userscalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link rel="stylesheet" href="Css/main.css">
-    <link rel="stylesheet" href="Css/modal.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
+    <link rel="stylesheet" href="noUiSlider/nouislider.css">
+    <link rel="stylesheet" href="Css/modal.css">
+    <link rel="stylesheet" href="Css/calendar.css">
+    <link rel="stylesheet" href="Css/main.css">
+    
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    <script src='fullcalendar/lib/moment.min.js'></script>
+    <script src='fullcalendar/fullcalendar.js'></script>
+    <script src='fullcalendar/locale/fr.js'></script>   
+    <script src="noUiSlider/nouislider.js"></script>
+
     <title>Epsi Collabs</title>
 
 </head>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Includes/nav.php" ?>
 <body>
-
-    <div class="modal-content">
         <?php
            
             if (isset($_GET['id'])) {
@@ -37,10 +45,10 @@ if (!is_login()) {
 
         ?>
 
-        <div id="login-wrapper" class="card mh-auto profiluser"> 
+        <div id="login-wrapper" class="card mh-auto profiluser card-responsive"> 
             <div class="row alignement">
 
-                <div class="col s12">
+                <div class="col s12 p-no">
                     <nav class="nav-extended bg-epsi3">
 
                         <div class="nav-content">
@@ -143,7 +151,7 @@ if (!is_login()) {
                 </div>
 
             </div>
-        </div>
+        
       
 </body>
 

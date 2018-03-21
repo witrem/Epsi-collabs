@@ -1,5 +1,6 @@
-body{color:#4e4e4e}
+body{color:#4e4e4e;height:100%}
 nav{z-index:900}
+.row{padding:20px}
 
 /* ===========================================================
     #cms
@@ -28,6 +29,7 @@ nav{z-index:900}
     box-shadow:0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);}
 .fixed{position:fixed}
 .self-centered{margin:0 auto 0 auto}
+.row .p-no,.p-no{padding:0}
 
 /* ===========================================================
     #nav bar
@@ -252,5 +254,24 @@ nav{z-index:900}
 @media screen and (max-width: 1260px) {
     .user {
         width: calc(98% - 2px);
+    }
+}
+
+/* ===========================================================
+    #card responsive
+   =========================================================== */
+
+.card-responsive {
+
+}
+
+@media screen and (max-width: 700px) {
+    .card-responsive{
+        width: 100%;
+        margin: 0;
+        height: 100%;
+    }
+    .row {
+        margin-bottom: 0;
     }
 }
