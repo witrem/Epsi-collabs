@@ -16,6 +16,15 @@ class User {
 
     }
 
+    public function init($nom, $prenom, $level, $campus, $avatar_url) {
+
+        $this->nom = $nom;
+        $this->prenom = $prenom;
+        $this->level = $level;
+        $this->campus = $campus;
+        $this->avatar_url = $avatar_url;
+
+    }
 
     public function change_avatar_url($id, $ext) {
 

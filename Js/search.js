@@ -22,7 +22,9 @@ function search() {
         type: "POST",
         data: data
     }).done(function(data) {
-        console.log(data);
+        
+        $('#founded-user').html(data);
+
     });
 
 }

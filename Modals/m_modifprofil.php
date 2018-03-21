@@ -18,7 +18,7 @@
 
                 <img src="<?php echo "http://" . $_SERVER['HTTP_HOST'] . "/Assets/Avatar/" . User::get_avatar_url($_SESSION['user']['id']) ?>" alt="" class="circle responsive-img" width="15%">
 
-                <form action="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . 'UploadAvatar.php'?>" method="post" enctype="multipart/form-data" >
+                <form action="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . '/Modules/UploadAvatar.php'?>" method="post" enctype="multipart/form-data" >
                     <div class="file-field input-field">
                         <div class="btn bg-epsi">
                             <span>File</span>
