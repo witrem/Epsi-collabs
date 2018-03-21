@@ -125,7 +125,7 @@
         console.log(data)
 
         $.ajax({
-            url: "http://localhost:88/Modules/AddEvent.php",
+            url: "http://epsi-collabs.fr/Modules/AddEvent.php",
             type: "POST",
             data: data
         }).done(function(data) {

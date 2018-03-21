@@ -27,10 +27,10 @@ if (isset($_POST)) {
         $req->bindValue(':Niveau', $niveau);
         $req->bindValue(':Campus', $campus);
         $req->execute();
-        //header('location: http://' . $_SERVER['HTTP_HOST'] . '/login.php');
+        header('location: http://' . $_SERVER['HTTP_HOST'] . '/login.php');
     }
     
     else {
-        //header('location: http://' . $_SERVER['HTTP_HOST'] . '/Modules/inscription.php');
+        header('location: http://' . $_SERVER['HTTP_HOST'] . '/Modules/inscription.php');
     }
 }

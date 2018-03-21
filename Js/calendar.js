@@ -4,7 +4,7 @@ function update() {
     comp = $("#comp_select").val();
     console.log(campus + ' . ' + comp)
     $('#calendar').fullCalendar('addEventSource', {
-            url: 'http://localhost:88/Modules/EventFeeder.php',
+            url: 'http://epsi-collabs.fr/Modules/EventFeeder.php',
             type: 'POST',
             data: {
                 comp: comp,
@@ -74,7 +74,7 @@ $(document).ready(function(){
         },
         eventSources: [
             {
-                url: 'http://localhost:88/Modules/EventFeeder.php',
+                url: 'http://epsi-collabs.fr/Modules/EventFeeder.php',
                 type: 'POST',
                 data: {
                     comp: comp,

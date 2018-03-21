@@ -34,6 +34,12 @@ if (!is_login()) {
 </head>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Includes/nav.php" ?>
 <body>
+    <script>
+        $(document).ready(function(){
+            $('.modal-trigger').leanModal();
+            $('select').material_select();
+        });
+    </script>
     <?php
         
         if (isset($_GET['id'])) {
