@@ -13,7 +13,7 @@
 
         sleep(1);
 
-        $answer = Data_base::login_test($_POST['login'], $_POST['password']);
+        $answer = Data_base::login_test($_POST['login'], hash('sha256', $_POST['password']));
         
         if($answer != false) {
 

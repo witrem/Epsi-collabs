@@ -14,81 +14,82 @@ class User {
 
     public function __construct($id) {
 
-        $this->id = $id;
-        $this->nom = "alexis de parmesan";
-        $this->prenom = "witrem du bois joli";
-        $this->level = "B1";
-        $this->campus = "Nantes";
-        $this->avatar_url = "http://localhost:88/Assets/Images/profil.jpg";
+    }
+
+
+    public function change_avatar_url($id, $ext) {
+
+        $db = Data_base::connect();
+
+        $req = $db->prepare("UPDATE `personnes` SET `Photo` = :photo WHERE `personnes`.`id_Personne` = :idpersonne");
+
+        $req->execute(array(
+            ":idpersonne" => $id,
+            ":photo" => $id . "." . $ext
+        ));
+
+    }
+
+    public function get_avatar_url($id) {
+
+        $db = Data_base::connect();
+        
+        $req = $db->prepare("SELECT p . Photo from personnes p where p . id_Personne = :idpersonne");
+        
+        $req->execute(array(":idpersonne" => $_SESSION['user']['id']));
+        
+        $answer = $req->fetch();
+
+        return $answer['Photo'];
+
     }
 
     public function search_result_print() {
-
-        public function change_avatar_url($id, $ext) {
-
-            $db = Data_base::connect();
-
-            $req = $db->prepare("UPDATE `personnes` SET `Photo` = :photo WHERE `personnes`.`id_Personne` = :idpersonne");
-
-            $req->execute(array(
-                ":idpersonne" => $id,
-                ":photo" => $id . "." . $ext
-            ));
-
-        }
-
-        public function get_avatar_url($id) {
-
-            $db = Data_base::connect();
-            
-            $req = $db->prepare("SELECT p . Photo from personnes p where p . id_Personne = :idpersonne");
-            
-            $req->execute(array(":idpersonne" => $_SESSION['user']['id']));
-            
-            $answer = $req->fetch();
-
-            return $answer['Photo'];
-
-        }
-
-                <div class='user shadow border'>
-                    <div>
-                        <img src='" . $this->avatar_url . "' alt='avatar_img'>
-                    </div>
-                    <div>
-                        <span class='user-name'>" . $this->nom . " - " . $this->prenom . "</span><br>
-                        " . $this->level . " - " . $this->campus . "
-                    </div>
+        echo "
+            <div class='user shadow border'>
+                <div>
+                    <img src='" . $this->avatar_url . "' alt='avatar_img'>
                 </div>
-            ";
-
-            echo "
-                <div class='user shadow border'>
-                    <div>
-                        <img src='" . $this->avatar_url . "' alt='avatar_img'>
-                    </div>
-                    <div>
-                        <span class='user-name'>" . $this->nom . " - " . $this->prenom . "</span><br>
-                        " . $this->level . " - " . $this->campus . "
-                    </div>
+                <div>
+                    <span class='user-name'>" . $this->nom . " - " . $this->prenom . "</span><br>
+                    " . $this->level . " - " . $this->campus . "
                 </div>
-            ";
+            </div>
+        ";
 
-        public function get_campus($id) {
+    }
 
-            $db = Data_base::connect();
+    public function get_campus($id) {
 
-            $req = $db->prepare("SELECT id_Campus FROM personnes WHERE id_Personne = :id");
+        $db = Data_base::connect();
 
-            $req->execute(array(":id" => $id));
+        $req = $db->prepare("SELECT id_Campus FROM personnes WHERE id_Personne = :id");
 
-            $answer = $req->fetch();
+        $req->execute(array(":id" => $id));
 
-            return $answer['id_Campus'];
+        $answer = $req->fetch();
 
+        return $answer['id_Campus'];
+
+    }
+
+    public function is_prof() {
+
+        $db = Data_base::connect();
+
+        $req = $db->prepare("SELECT Niveau FROM personnes WHERE id_Personne = :id");
+
+        $req->execute(array(":id" => $_SESSION['user']['id']));
+
+        $answer = $req->fetch();
+
+        if ($answer['Niveau'] == "Prof"){
+            return true;
+        } else {
+            return false;
         }
 
+    }
 
-
-;
+};
 ?>

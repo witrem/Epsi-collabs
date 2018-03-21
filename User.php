@@ -1,4 +1,13 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . '/Modules/config.php'; ?>
+<?php 
+
+include_once $_SERVER['DOCUMENT_ROOT'] . '/Includes/main.php'; 
+session_start();
+
+if (!is_login()) {
+    header('location: http://' . $_SERVER['HTTP_HOST'] . '/login.php');
+}
+
+?>
 <head>
 
     <meta charset="UTF-8">
@@ -18,14 +27,14 @@
 
     <div class="modal-content">
         <?php
-        $db = new PDO("mysql:host=" . config::SERVERNAME . ";dbname=" . config::DBNAME, config::USER, config::PASSWORD, array(PDO::ATTR_PERSISTENT => true, PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
-        $req = $db->prepare("select p.Nom,p.Prenom,p.Email,p.Niveau,ca.Nom as Nom_Campus,p.Description,p.Social1,p.Social2,p.Social3,p.Photo, co.Nom as Nom_Competence from personnes p "
-                . "join campus ca on p.id_campus = ca.id_campus join propose pr on pr.id_Personne=p.id_Personne "
-                . "join competences co on co.id_Competence=pr.id_Competence "
-                . "where p.id_Personne= :idpersonne");
-        $req->bindValue(':idpersonne', 6);
-        $req->execute();
-        $resultat = $req->fetchAll();
+            $db = Data_base::connect();
+            $req = $db->prepare("select p.Nom,p.Prenom,p.Email,p.Niveau,ca.Nom as Nom_Campus,p.Description,p.Social1,p.Social2,p.Social3,p.Photo, co.Nom as Nom_Competence from personnes p "
+                    . "join campus ca on p.id_campus = ca.id_campus join propose pr on pr.id_Personne=p.id_Personne "
+                    . "join competences co on co.id_Competence=pr.id_Competence "
+                    . "where p.id_Personne= :idpersonne");
+            $req->bindValue(':idpersonne', $_SESSION['user']['id']);
+            $req->execute();
+            $resultat = $req->fetchAll();
         ?>
 
         <div id="login-wrapper" class="card mh-auto profiluser"> 
@@ -104,7 +113,6 @@
                             <p class="comptext">Super Pouvoir</p>
                             <?php
                                     foreach ($resultat as $ligne) {
-                                        
                                         echo "<div class='chip'>",$ligne['Nom_Competence'],"</div>";
                                     }
                             ?>

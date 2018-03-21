@@ -1,11 +1,13 @@
 <?php
 
+// Afficher les erreurs à l'écran
+ini_set('display_errors', 1);
+
     include_once $_SERVER['DOCUMENT_ROOT'] . "/Includes/main.php";
 
     session_start();
 
-    // Afficher les erreurs à l'écran
-    ini_set('display_errors', 1);
+    
     
     if (!is_login()) {
         header('location: http://' . $_SERVER['HTTP_HOST'] . '/login.php');
