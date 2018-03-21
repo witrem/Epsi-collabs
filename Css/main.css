@@ -9,6 +9,7 @@ nav{z-index:900}
 .bg-epsi2{background-color:#00A4BB}
 .bg-epsi3{background-color:#5CAE3E}
 .bg-epsi4{background-color:#FFE419}
+.bg-epsi5{background-color:#F08032}
 .mw-75{max-height:75%}
 .mt-1{margin-top:1em}
 .txt-center{text-align:center}
@@ -120,8 +121,13 @@ nav{z-index:900}
     width: 60%;
     margin-left: 20%;
     margin-top:3%;
-    height: 65%;
+    height: auto;
     padding-top: 20px;
+}
+
+.photo {
+    
+    margin-top: 30px;
 }
 
 .logfichier {
@@ -133,6 +139,36 @@ nav{z-index:900}
     padding-top: 20px;
     font-size:30px;
 }
+
+.comptext {
+    
+    font-size: 20px;
+    
+}
+
+.Talents {
+    
+    padding-bottom: 30px;
+}
+
+.messagerie {
+    
+   margin-top:3%;
+   
+    
+}
+
+.profiluser {
+    
+    width: 60%;
+   
+    margin-top:3%;
+    height: auto;
+    
+}
+
+
+
 
 @media screen and (max-width: 600px) {
     #search {
