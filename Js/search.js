@@ -15,15 +15,15 @@ function search() {
         data += '&campus=' + $("#campus_select").val();
     }
 
-    console.log(data);
-
     $.ajax({
-        url: "http://yuumii.ovh/Modules/search.php",
+        url: "http://localhost:88/Modules/search.php",
         type: "POST",
         data: data
     }).done(function(data) {
+
+        console.log("pass");
         
-        $('#founded-user').html(data);
+        //$('#founded-user').html(data);
 
     });
 

@@ -33,59 +33,60 @@
 
                 <table class="infoprofil">
 
-                        <tbody>
-                            <tr>
-                                <td>Social 1</td>
-                                <td>
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <input name="social1" type="text" value="<?php echo $resultat[0]['Social1'] ?>">
-                                        </div>
-                                    </div>  
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Social 2</td>
-                                <td>
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <input name="social2" type="text" value="<?php echo $resultat[0]['Social2'] ?>">
-                                        </div>
+                    <tbody>
+                        <tr>
+                            <td>Social 1</td>
+                            <td>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input name="social1" type="text" value="<?php echo $resultat[0]['Social1'] ?>">
                                     </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Social 3</td>
-                                <td>  
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <input name="social3" type="text" value="<?php echo $resultat[0]['Social3'] ?>">
-                                        </div>
+                                </div>  
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Social 2</td>
+                            <td>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input name="social2" type="text" value="<?php echo $resultat[0]['Social2'] ?>">
                                     </div>
-                                </td>
-                            </tr>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Social 3</td>
+                            <td>  
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input name="social3" type="text" value="<?php echo $resultat[0]['Social3'] ?>">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
 
-                            <tr>
-                                <td>Description</td>
-                                <td>  <div class = "row">
-                                        <div class = "input-field col s12">
-                                            <textarea id = "comments" class = "materialize-textarea" length = "200" name="description"><?php echo $resultat[0]['Description']; ?></textarea>
-                                            <script>
-                                                $(document).ready(function () {
-                                                    $('input#input_text, textarea#textarea1').characterCounter();
-                                                });
-                                            </script>
-                                        </div>          
-                                    </div></td>    			
-                            </tr>
+                        <tr>
+                            <td>Description</td>
+                            <td>  
+                                <div class = "row">
+                                    <div class = "input-field col s12">
+                                        <textarea id = "comments" class = "materialize-textarea" length = "200" name="description"><?php echo $resultat[0]['Description']; ?></textarea>
+                                        <script>
+                                            $(document).ready(function () {
+                                                $('input#input_text, textarea#textarea1').characterCounter();
+                                            });
+                                        </script>
+                                    </div>          
+                                </div>
+                            </td>    			
+                        </tr>
+                    </tbody>
+                
+                    <a class="btn-floating btn-large waves-effect waves-light bg-epsi  modalbutton"><i class="material-icons">autorenew</i></a>
 
-
-                <a class="btn-floating btn-large waves-effect waves-light bg-epsi  modalbutton"><i class="material-icons">autorenew</i></a>
-
-                <a class="modal-action modal-close btn-floating btn-large waves-effect waves-light red  modalbutton"><i class="material-icons">close</i></a>
-
+                    <a class="modal-action modal-close btn-floating btn-large waves-effect waves-light red  modalbutton"><i class="material-icons">close</i></a>
+                </table>
             </div>
         </div>
-
     </div>
 </div>

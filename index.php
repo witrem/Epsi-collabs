@@ -84,7 +84,6 @@ ini_set('display_errors', 1);
 
     </div>
 
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Modals/m_profil.php"; ?>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Modals/m_profil.php'; ?>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Modals/m_modifprofil.php'; ?>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Modals/m_modifdate.php'; ?>
