@@ -18,7 +18,7 @@ function search() {
     console.log(data);
 
     $.ajax({
-        url: "http://localhost:88/Modules/search.php",
+        url: "http://yuumii.ovh/Modules/search.php",
         type: "POST",
         data: data
     }).done(function(data) {

@@ -13,7 +13,7 @@ $(document).ready(function(){
         editable: false,
         eventSources: [
             {
-                url: 'http://localhost:88/Modules/EventFeeder.php',
+                url: 'http://yuumii.ovh/Modules/EventFeeder.php',
                 type: 'GET',
                 data: {
                     comp: comp,
@@ -38,7 +38,7 @@ function update() {
     comp = $("#comp_select").val();
     console.log(campus + ' . ' + comp)
     $('#calendar').fullCalendar('addEventSource', {
-            url: 'http://localhost:88/Modules/EventFeeder.php',
+            url: 'http://yuumii.ovh/Modules/EventFeeder.php',
             type: 'GET',
             data: {
                 comp: comp,
