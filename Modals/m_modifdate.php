@@ -50,7 +50,7 @@
         </div>
     </div>
     <div class="modal-footer">
-        <a onclick='submit_event()' class="btn-floating btn-large waves-effect waves-light bg-epsi modalbutton"><i class="material-icons">add_alarm</i></a>
+        <a onclick='submit_event()' class="btn-floating modal-close btn-large waves-effect waves-light bg-epsi modalbutton"><i class="material-icons">add_alarm</i></a>
         <div class="ml-1 inline"></div>
         <a class="modal-action modal-close btn-floating btn-large waves-effect waves-light red  modalbutton"><i class="material-icons">close</i></a>
     </div>

@@ -44,7 +44,7 @@
         </div>
     </div>
     <div class="modal-footer">
-        <a onclick='submit_compmodif()' class="btn-floating btn-large waves-effect waves-light bg-epsi modalbutton" type="submit"><i class="material-icons">assignment_turned_in</i></a>
+        <a onclick='submit_compmodif()' class="btn-floating modal-close btn-large waves-effect waves-light bg-epsi modalbutton" type="submit"><i class="material-icons">assignment_turned_in</i></a>
         <div class="ml-1 inline"></div>
         <a class="modal-action modal-close btn-floating btn-large waves-effect waves-light red  modalbutton"><i class="material-icons">close</i></a>
     </div>

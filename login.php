@@ -68,10 +68,10 @@
 
             <form action="/login.php" method="post">
 
-                <label class="login-resp-label">Nom d'Utilisateur</label>
+                <label class="login-resp-label">Email</label>
                 <div class="input-group mb-3 input-group-login">
                     <div class="input-group-prepend">
-                        <span class="input-group-text login-label" style="width: 150px;">Nom d'Utilisateur</span>
+                        <span class="input-group-text login-label" style="width: 150px;">Email</span>
                     </div>
                     <input type="text" name="login" class="login-input form-control<?php if ($erreur == true) echo " invalid"; ?>" value="<?php if (isset($_COOKIE['login'])) echo $_COOKIE['login'];?>" >
                 </div>

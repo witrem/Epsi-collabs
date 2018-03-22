@@ -57,8 +57,8 @@
                                 <td>
                                     <div class="input-field col s12">
                                         <select name="campus">
-                                            <option value="1">Aras</option>
-                                            <option value="2">Bordeau</option>
+                                            <option value="1">Arras</option>
+                                            <option value="2">Bordeaux</option>
                                             <option value="3">Brest</option>
                                             <option value="4">Grenoble</option>
                                             <option value="5">Lille</option>
