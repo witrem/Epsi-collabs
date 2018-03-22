@@ -43,9 +43,6 @@
 
                         <div id="test1" class="col s12">
 
-
-
-
                             <table>
 
                                 <thead>
