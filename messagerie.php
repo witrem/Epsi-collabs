@@ -103,44 +103,44 @@ where `ID_Groupes`= :idg AND ID_User != :idpersonne");
                                 <tbody>
 
 
-    <?php
-    if (!(isset($_GET['idg']))) {
-        
-    } else {
+                                    <?php
+                                    if (!(isset($_GET['idg']))) {
+                                        
+                                    } else {
 
-        $idg = $_GET['idg'];
+                                        $idg = $_GET['idg'];
 
-        $req = $db->prepare("select * from messages where ID_Groupes= :ID_Groupes");
-        $req->bindParam(':ID_Groupes', $idg);
-        $req->execute();
-        $messages = $req->fetchAll();
+                                        $req = $db->prepare("select * from messages where ID_Groupes= :ID_Groupes");
+                                        $req->bindParam(':ID_Groupes', $idg);
+                                        $req->execute();
+                                        $messages = $req->fetchAll();
 
-        foreach ($messages as $message) {
+                                        foreach ($messages as $message) {
 
 
-            $message['Date'] = date("d/m/y G:i", strtotime($message['Date']));
-            echo "<tr><td>";
-            if ($message['ID_User'] == $idsession) {
-                echo"<div class='col s8 profiluser message1'>
+                                            $message['Date'] = date("d/m/y G:i", strtotime($message['Date']));
+                                            echo "<tr><td>";
+                                            if ($message['ID_User'] == $idsession) {
+                                                echo"<div class='col s8 profiluser message1'>
                                             <div class='card-panel cyan'>
                                                 <span class='white-text'>";
 
-                echo '[' . $message['Date'] . '] ', $message['Contenu'], "<br>";
-            } else {
-                echo "<div class='col s4'></div>
+                                                echo '[' . $message['Date'] . '] ', $message['Contenu'], "<br>";
+                                            } else {
+                                                echo "<div class='col s4'></div>
                                         <div class='col s8 profiluser message1'>
                                             <div class='card-panel  orange darken-3'>
                                                 <span class='white-text'>";
-                echo $message['Contenu'], ' [' . $message['Date'] . "]<br>";
-            }
-            echo "</span>
+                                                echo $message['Contenu'], ' [' . $message['Date'] . "]<br>";
+                                            }
+                                            echo "</span>
                                             </div>
                                         </div>
                                     </td>
                                 </tr>";
-        }
-    }
-    ?>
+                                        }
+                                    }
+                                    ?>
 
 
                                 </tbody>
@@ -157,7 +157,16 @@ where `ID_Groupes`= :idg AND ID_User != :idpersonne");
 
 
                 </div>
-
+                <?php
+                
+                $req = $db->prepare("Select p.Nom,p.Prenom from invitations i
+                join personnes p on p.id_Personne= i.ID_User
+                where `ID_Groupes`= :idg AND ID_User != :idpersonne");
+                $req->bindValue(':idg', $idg );
+                $req->bindValue(':idpersonne', $idsession);
+                $req->execute();
+                $mname = $req->fetch();
+                ?>
                 <form action="newmessage.php" method="POST">
 
                     <div class="row">
@@ -165,7 +174,7 @@ where `ID_Groupes`= :idg AND ID_User != :idpersonne");
                             <i class="material-icons prefix">mode_edit</i>
                             <textarea id="icon_prefix2" name="msg" class="materialize-textarea message1 mh-auto"></textarea>
                             <input name="ID_Groupes" type="hidden" value="<?php echo $idg; ?>">
-                            <label for="icon_prefix2">Ton message</label>
+                            <label for="icon_prefix2">Ton message à <?php echo $mname['Nom'],' ',$mname['Prenom']; ?></label>
                             <button class="btn-floating btn-large bg-epsi5 boutonmsg" type="submit"><i class="material-icons">email</i></button>
                         </div>
                     </div>
@@ -173,6 +182,6 @@ where `ID_Groupes`= :idg AND ID_User != :idpersonne");
 
             </div>
         </div>
-<?php } ?>
+    <?php } ?>
 </body>
 

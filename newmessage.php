@@ -6,7 +6,7 @@
 if (isset($_POST)) {
     $msg = $_POST['msg'];
     $idg = $_POST['ID_Groupes'];
-    $idsession = 9; // AJOUTER SESSION USER 
+    $idsession = 10; // AJOUTER SESSION USER 
     
 
     $db = new PDO("mysql:host=" . config::SERVERNAME . ";dbname=" . config::DBNAME, config::USER, config::PASSWORD, array(PDO::ATTR_PERSISTENT => true, PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
