@@ -88,19 +88,27 @@ function search() {
 
     if (data == '') {
         alert('Selectionnez au moins un filtre');
+        return;
     }
-
-    console.log(data)
 
     $.ajax({
         url: "http://www.epsi-collabs.fr/Modules/search.php",
         type: "POST",
         data: data
     }).done(function(data) {
-        console.log('pass');
         $("#founded-user").html(data);
+        $("#search_btn").attr("onclick", "cancel()");
+        $("#search_btn").text("Annuler");
+        $("#search_btn").attr("class", "btn clickable red");
     });
 
+}
+
+function cancel() {
+    $("#founded-user").html('');
+    $("#search_btn").attr("onclick", "cancel()");
+    $("#search_btn").text("Rechercher");
+    $("#search_btn").attr("class", "btn clickable");
 }
 
 function search_filter_update() {
@@ -134,16 +142,20 @@ $(document).ready(function () {
     $('#filter-list').on('click', function() {
         if ($("#search").css('height') != '83px') {
             $("#search").css('height', '83px')
+            $("#search").css('overflow', 'hidden');
         } else {
             $("#search").css('height', 'auto');
+            $("#search").css('overflow', 'initial');
         }
     })
 
     $('#filter-edit-btn').on('click', function() {
         if ($("#search").css('height') != '83px') {
             $("#search").css('height', '83px')
+            $("#search").css('overflow', 'hidden');
         } else {
             $("#search").css('height', 'auto');
+            $("#search").css('overflow', 'initial');
         }
     })
 
