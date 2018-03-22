@@ -63,7 +63,7 @@
 
             $request .= "pe . Email LIKE :user";
 
-            $data[':user'] = '\'%' . $_POST['user'] . '%\'';
+            $data[':user'] = "\"%" . $_POST['user'] . "%\"";
 
         }
 
