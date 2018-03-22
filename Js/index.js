@@ -165,8 +165,6 @@ $(document).ready(function () {
         
     })
 
-    filter-list
-
     search_filter_update()
 
 })
