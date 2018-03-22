@@ -56,7 +56,7 @@
         ?>
 
     </div>
-    <input type="hidden" value="<?php echo $_SESSION['user']['id']; ?>">
+    <input id="my_id" type="hidden" value="<?php echo $_SESSION['user']['id']; ?>">
 
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Includes/nav.php" ?>
 
@@ -102,7 +102,7 @@
     <div id="founded-user" class="">
 
     </div>
-    
+
     <div id="calendar-perso-wrapper">
         <div class="calendar" id="calendar-perso"></div>
     </div>
