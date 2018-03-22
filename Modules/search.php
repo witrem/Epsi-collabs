@@ -67,8 +67,6 @@
 
         }
 
-        var_dump($data);
-
         $db = Data_base::connect();
 
         $statment = $db->prepare($request . ' GROUP BY pe . id_Personne');
@@ -76,10 +74,6 @@
         $statment->execute($data);
 
         $answer = $statment->fetchAll(PDO::FETCH_ASSOC);
-
-        var_dump($statment);
-
-        echo $statment->errorCode();
 
         foreach($answer as &$user) {
 
