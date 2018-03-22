@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="Css/modal.css">
     <link rel="stylesheet" href="Css/calendar.css">
     <link rel="stylesheet" href="Css/main.css">
+    <link rel="stylesheet" href="Css/index.css">
     
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
@@ -44,27 +45,40 @@
         $('select').material_select();
     });
     </script>
-    <script src="Js/search.js"></script>
+
+    <div id="filter-list-valueToText" style="display: none;">
+        <?php
+            Competence::value_print();
+        ?>
+
+        <?php
+            Campus::value_print();
+        ?>
+
+    </div>
 
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Includes/nav.php" ?>
 
     <div id="search">
+        <div id="filter-list"></div>
         <div class="input-field col s12 search_select">
-            <select id="comp_select">
-                <option value="0" disabled selected>Compétences</option>
+            <select class="filter-value" id="comp_select">
+                <option value="0" selected>Compétences</option>
                 <?php
                     Competence::select_print();
                 ?>
             </select>
-        </div><div class="input-field col s12 search_select">
-            <select id="campus_select">
+        </div>
+        <div class="input-field col s12 search_select">
+            <select class="filter-value" id="campus_select">
                 <option value="0" selected>Campus</option>
                 <?php
                     Campus::select_print();
                 ?>
             </select>
-        </div><div class="input-field col s12 search_select">
-            <select id="lvl_select">
+        </div>
+        <div class="input-field col s12 search_select">
+            <select class="filter-value" id="lvl_select">
                 <option value="0" selected>Niveau</option>
                 <option value="B1">B1</option>
                 <option value="B2">B2</option>
@@ -72,9 +86,12 @@
                 <option value="I4">I4</option>
                 <option value="I5">I5</option>
             </select>
-        </div><div class="search_select">
+        </div>
+        <input class="filter-value" id="user_search" type="text" placeholder="Utilisateurs (email)">
+        <div class="search_select">
             <div id="search_btn" class="btn clickable" onclick="search()">Rechercher</div>
         </div>
+        <i id="filter-edit-btn" class="material-icons">arrow_drop_down</i>
     </div>
 
     <div id="search_btn_resp" class="btn clickable" onclick="search()">
@@ -91,5 +108,6 @@
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Modals/m_modifcomp.php'; ?>
 
     <script src="Js/modals.js"></script>
+    <script src="Js/index.js"></script>
 
 </html>

@@ -48,7 +48,7 @@
             
         }
         
-         public function select_print_checked_propose($id) {
+        public function select_print_checked_propose($id) {
             
             $db = Data_base::connect();
 
@@ -101,8 +101,25 @@
             }
 
         }
+
+        public function value_print() {
+
+            $db = Data_base::connect();
+
+            $statment = $db->prepare("SELECT * FROM competences");
+            
+            $statment->execute();
+
+            $answer = $statment->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($answer as &$comp) {
+                
+                echo '<div id="comp-' . $comp['id_Competence'] . '">' . $comp['Nom'] . '</div>';
+
+            }
+
+        }
         
-    
     };
 
 ?>

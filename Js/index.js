@@ -50,8 +50,102 @@ $(document).ready(function () {
         }
     });
 
-    update_view_calendar();
+    //update_view_calendar();
 
-    update_calendar_perso()
+    //update_calendar_perso();
 
 })
+
+
+/* ====================================================================
+    #search part
+   ==================================================================== */
+
+function search() {
+
+    $("#search").css('height', '83px');
+
+    data = ''; 
+
+    if ($("#comp_select").val() != null && $("#comp_select").val() != 0) {
+        data += 'comp=' + $("#comp_select").val();
+    }
+
+    if ($("#lvl_select").val() != null && $("#lvl_select").val() != 0) {
+        if (data != '') data += '&'
+        data += 'lvl=' + $("#lvl_select").val();
+    }
+
+    if ($("#campus_select").val() != 0 && $("#campus_select").val() != 0) {
+        if (data != '') data += '&'
+        data += 'campus=' + $("#campus_select").val();
+    }
+
+    if ($("#user_search").val() != '') {
+        if (data != '') data += '&'
+        data += 'user=' + $("#user_search").val();
+    }
+
+    if (data == '') {
+        alert('Selectionnez au moins un filtre');
+    }
+
+    console.log(data)
+
+    $.ajax({
+        url: "http://www.epsi-collabs.fr/Modules/search.php",
+        type: "POST",
+        data: data
+    }).done(function(data) {
+        console.log('pass');
+        $("#founded-user").html(data);
+    });
+
+}
+
+function search_filter_update() {
+
+    $('#filter-list').text('');
+
+    var filter = '';
+
+    if ($("#comp_select").val() != null && $("#comp_select").val() != 0) {
+        filter += $('#filter-list-valueToText #comp-' + $("#comp_select").val()).text() + ' ';
+    }
+
+    if ($("#lvl_select").val() != null && $("#lvl_select").val() != 0) {
+        filter += $("#lvl_select").val() + ' ';
+    }
+
+    if ($("#campus_select").val() != 0 && $("#campus_select").val() != 0) {
+        filter += $('#filter-list-valueToText #campus-' + $("#campus_select").val()).text() + ' ';
+    }
+
+    if ($("#user_search").val() != '') {
+        filter += $("#user_search").val();
+    }
+    
+    $('#filter-list').text(filter);
+
+}
+
+$(document).ready(function () {
+
+    $('#filter-edit-btn').on('click', function() {
+        if ($("#search").css('height') != '83px') {
+            $("#search").css('height', '83px')
+        } else {
+            $("#search").css('height', 'auto');
+        }
+    })
+
+    $('.filter-value').change(function() {
+
+        search_filter_update()
+        
+    })
+
+    search_filter_update()
+
+})
+

@@ -8,6 +8,7 @@
                 echo "<li><a href='http://" . $_SERVER['HTTP_HOST'] . "/Admin/Admin.php'>Admin zone</a></li>";
             }
         ?>
+            <li><a href="http://<?php echo $_SERVER['HTTP_HOST'] . '/messagerie.php'; ?>">Messagerie</a></li>
             <li><a href="http://<?php echo $_SERVER['HTTP_HOST'] . '/Calendar.php'; ?>">Calendrier</a></li>
             <li><a class="modal-trigger" href="#modalprofile">Profil</a></li>
             <li><a href="http://<?php echo $_SERVER['HTTP_HOST'] . '/Modules/disconnect.php'; ?>">Déconnexion</a></li>
@@ -18,12 +19,12 @@
 <div id="slide_menu" class="bg-epsi">
 
     <ul>
-        <li><a href='http://<?php echo $_SERVER['HTTP_HOST']; ?>'>Accueil</a></li>
         <?php 
             if (User::is_prof()) {
                 echo "<li><a href='http://" . $_SERVER['HTTP_HOST'] . "/Admin/Admin.php'>Admin zone</a></li>";
             }
         ?>
+        <li><a href="http://<?php echo $_SERVER['HTTP_HOST'] . '/messagerie.php'; ?>">Messagerie</a></li>
         <li><a href="http://<?php echo $_SERVER['HTTP_HOST'] . '/Calendar.php'; ?>">Calendrier</a></li>
         <li><a class="modal-trigger modal-close" href="#modalprofile">Profil</a></li>
         <li><a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/Modules/disconnect.php">Déconnexion</a></li>

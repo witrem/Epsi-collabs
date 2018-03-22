@@ -34,18 +34,17 @@
             $('select').material_select();
         });
     </script>
-    
+
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Includes/nav.php" ?>
 
     <?php
-    $idsession = $_SESSION['user']['id'];
+        $idsession = $_SESSION['user']['id'];
 
-    $db = Data_base::connect();
-    $req = $db->prepare("Select ID_Groupes from invitations where ID_User = :idpersonne");
-    $req->bindValue(':idpersonne', $idsession);
-    $req->execute();
-    $resultat = $req->fetchAll();
-    
+        $db = Data_base::connect();
+        $req = $db->prepare("Select ID_Groupes from invitations where ID_User = :idpersonne");
+        $req->bindValue(':idpersonne', $idsession);
+        $req->execute();
+        $resultat = $req->fetchAll();
     ?>
         <div class="listuser">
 
