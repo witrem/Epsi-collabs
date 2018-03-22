@@ -10,21 +10,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, userscalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link rel="stylesheet" href="/Css/main.css">
-    <link rel="stylesheet" href="/Css/modal.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
+    <link rel="stylesheet" href="noUiSlider/nouislider.css">
+    <link rel="stylesheet" href="Css/modal.css">
+    <link rel="stylesheet" href="Css/calendar.css">
+    <link rel="stylesheet" href="Css/main.css">
+    
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
-    <title>Epsi Collabs</title>
+    <script src='fullcalendar/lib/moment.min.js'></script>
+    <script src='fullcalendar/fullcalendar.js'></script>
+    <script src='fullcalendar/locale/fr.js'></script>   
+    <script src="noUiSlider/nouislider.js"></script>
 
 </head>
-
-
 <body>
+    <script>
+        $(document).ready(function(){
+            $('.modal-trigger').leanModal();
+            $('select').material_select();
+        });
+    </script>
+    
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Includes/nav.php" ?>
+
     <?php
     $idsession = $_SESSION['user']['id'];
-    
 
     $db = Data_base::connect();
     $req = $db->prepare("Select ID_Groupes from invitations where ID_User = :idpersonne");
@@ -172,7 +186,7 @@
                 $req->execute();
                 $mname = $req->fetch();
                 ?>
-                        <form action="newmessage.php" method="POST">
+                        <form action="Modules/newmessage.php" method="POST">
 
                             <div class="row">
                                 <div class="input-field col s12">
