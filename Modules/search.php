@@ -2,14 +2,14 @@
 
     include_once $_SERVER['DOCUMENT_ROOT'] . "/Includes/main.php";
 
-    if (isset($_GET)) {
+    if (isset($_POST)) {
 
         $first = true;
 
         $request = "SELECT pe.Nom, pe.id_Personne, pe.Photo, pe.Prenom, pe.Niveau, (SELECT Nom from campus ca WHERE ca.id_Campus = pe.id_Campus) as campus_name 
             FROM personnes pe";
 
-        if (isset($_GET['comp'])) {
+        if (isset($_POST['comp'])) {
 
             if ($first) {
                 $first = false;
@@ -19,11 +19,12 @@
             
             $request .= ' JOIN propose pr ON pr.id_Personne = pe.id_Personne
             WHERE EXISTS (SELECT :comp as id_Competence)';
-            $data[':comp'] = $_GET['comp'];
+
+            $data[':comp'] = $_POST['comp'];
 
         }
 
-        if (isset($_GET['lvl'])) {
+        if (isset($_POST['lvl'])) {
 
             if ($first) {
                 $first = false;
@@ -34,11 +35,11 @@
 
             $request .= "pe.Niveau = :lvl";
 
-            $data[':lvl'] = $_GET['lvl'];
+            $data[':lvl'] = $_POST['lvl'];
 
         }
 
-        if (isset($_GET['campus'])) {
+        if (isset($_POST['campus'])) {
 
             if ($first) {
                 $first = false;
@@ -49,11 +50,11 @@
 
             $request .= "pe.id_Campus = :campus";
 
-            $data[':campus'] = $_GET['campus'];
+            $data[':campus'] = $_POST['campus'];
 
         }
 
-        if (isset($_GET['user'])) {
+        if (isset($_POST['user'])) {
             
             if ($first) {
                 $first = false;
@@ -64,7 +65,7 @@
 
             $request .= "pe.Email LIKE :perso";
 
-            $data[':perso'] = "%" . $_GET['user'] . "%";
+            $data[':perso'] = "%" . $_POST['user'] . "%";
 
         }
 
