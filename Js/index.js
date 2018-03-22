@@ -64,6 +64,7 @@ $(document).ready(function () {
 function search() {
 
     $("#search").css('height', '83px');
+    $("#search").css('overflow', 'hidden');
 
     data = ''; 
 
