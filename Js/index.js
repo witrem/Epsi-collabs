@@ -103,7 +103,7 @@ function search() {
         $("#search_btn").text("Annuler");
         $("#search_btn").attr("class", "btn clickable red");
 
-        $("#search_btn").attr("onclick", "cancel()");
+        $("#search_btn_resp").attr("onclick", "cancel()");
         $("#search_btn_resp").attr("class", "btn clickable red");
         $("#search_btn_resp i").text('close');
 
