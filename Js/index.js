@@ -102,6 +102,11 @@ function search() {
         $("#search_btn").attr("onclick", "cancel()");
         $("#search_btn").text("Annuler");
         $("#search_btn").attr("class", "btn clickable red");
+
+        $("#search_btn").attr("onclick", "cancel()");
+        $("#search_btn_resp").attr("class", "btn clickable red");
+        $("#search_btn_resp i").text('close');
+
     });
 
 }
@@ -111,6 +116,10 @@ function cancel() {
     $("#search_btn").attr("onclick", "search()");
     $("#search_btn").text("Rechercher");
     $("#search_btn").attr("class", "btn clickable");
+
+    $("#search_btn_resp").attr("onclick", "search()");
+    $("#search_btn_resp").attr("class", "btn clickable");
+    $("#search_btn_resp i").text('search');
 }
 
 function search_filter_update() {
