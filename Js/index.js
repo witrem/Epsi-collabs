@@ -28,7 +28,7 @@ $(document).ready(function () {
             right: 'today prev,next',
         },
         views: {
-            deuxJour: {
+            custom: {
                 type: 'list',
                 duration: {
                     days: 7
@@ -93,6 +93,8 @@ function search() {
         $("#search_btn_resp").attr("class", "btn clickable red");
         $("#search_btn_resp i").text('close');
 
+        $('#calendar-perso').css('display', 'none');
+
     });
 
 }
@@ -106,6 +108,8 @@ function cancel() {
     $("#search_btn_resp").attr("onclick", "search()");
     $("#search_btn_resp").attr("class", "btn clickable");
     $("#search_btn_resp i").text('search');
+
+    $('#calendar-perso').css('display', 'block');
 }
 
 function search_filter_update() {
