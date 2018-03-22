@@ -105,7 +105,7 @@ class User {
 
         $db = Data_base::connect();
 
-        $req = $db->prepare("SELECT p . Nom, p . Prenom, p . Email, p . Niveau, ca . Nom as Nom_Campus, p . Description, p . Social1, p . Social2, p . Social3, p . Photo FROM personnes p
+        $req = $db->prepare("SELECT p . id_Personne, p . Nom, p . Prenom, p . Email, p . Niveau, ca . Nom as Nom_Campus, p . Description, p . Social1, p . Social2, p . Social3, p . Photo FROM personnes p
         join campus ca on p . id_campus = ca . id_campus join propose pr on pr . id_Personne = p . id_Personne
         where p . id_Personne = :idpersonne");
         

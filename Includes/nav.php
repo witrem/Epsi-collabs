@@ -25,7 +25,7 @@
             }
         ?>
         <li><a href="http://<?php echo $_SERVER['HTTP_HOST'] . '/Calendar.php'; ?>">Calendrier</a></li>
-        <li><a class="modal-trigger" href="#modalprofile">Profil</a></li>
+        <li><a class="modal-trigger modal-close" href="#modalprofile">Profil</a></li>
         <li><a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/Modules/disconnect.php">Déconnexion</a></li>
     </ul>
 

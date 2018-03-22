@@ -1,14 +1,10 @@
 <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/Includes/main.php'; ?>
-<div id="modalmodifprofile" class="modal">
+<div id="modalmodifprofile" class="modal modal-fixed-footer">
 
     <div class="modal-content">
 
         <?php
-            $db = Data_base::connect();
-            $req = $db->prepare("select p.Photo from personnes p where p.id_Personne= :idpersonne");
-            $req->bindValue(':idpersonne', $_SESSION['user']['id']);
-            $req->execute();
-            $resultat = $req->fetchAll();
+            $result = User::get_user_info($_SESSION['user']['id']);
         ?>
 
         <h4 class="titreprofil">Profil</h4>
@@ -37,56 +33,41 @@
                         <tr>
                             <td>Social 1</td>
                             <td>
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input name="social1" type="text" value="<?php echo $resultat[0]['Social1'] ?>">
-                                    </div>
-                                </div>  
+                                <input id="social1" name="social1" type="text" value="<?php echo $result['Social1'] ?>">
                             </td>
                         </tr>
                         <tr>
                             <td>Social 2</td>
                             <td>
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input name="social2" type="text" value="<?php echo $resultat[0]['Social2'] ?>">
-                                    </div>
-                                </div>
+                                <input id="social2" name="social2" type="text" value="<?php echo $result['Social2'] ?>">
                             </td>
                         </tr>
                         <tr>
                             <td>Social 3</td>
                             <td>  
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input name="social3" type="text" value="<?php echo $resultat[0]['Social3'] ?>">
-                                    </div>
-                                </div>
+                                <input id="social3" name="social3" type="text" value="<?php echo $result['Social3'] ?>">
                             </td>
                         </tr>
 
                         <tr>
                             <td>Description</td>
                             <td>  
-                                <div class = "row">
-                                    <div class = "input-field col s12">
-                                        <textarea id = "comments" class = "materialize-textarea" length = "200" name="description"><?php echo $resultat[0]['Description']; ?></textarea>
-                                        <script>
-                                            $(document).ready(function () {
-                                                $('input#input_text, textarea#textarea1').characterCounter();
-                                            });
-                                        </script>
-                                    </div>          
-                                </div>
+                                <textarea id="comments" class="materialize-textarea" length="200" name="description"><?php echo $result['Description']; ?></textarea>
+                                <script>
+                                    $(document).ready(function () {
+                                        $('input#input_text, textarea#textarea1').characterCounter();
+                                    });
+                                </script>
                             </td>    			
                         </tr>
                     </tbody>
-                
-                    <a class="btn-floating btn-large waves-effect waves-light bg-epsi  modalbutton"><i class="material-icons">autorenew</i></a>
-
-                    <a class="modal-action modal-close btn-floating btn-large waves-effect waves-light red  modalbutton"><i class="material-icons">close</i></a>
-                </table>
+                </table>        
             </div>
         </div>
+    </div>
+    <div class="modal-footer">
+        <a onclick='submit_profilmodif()' class="btn-floating btn-large waves-effect waves-light bg-epsi modalbutton"><i class="material-icons">autorenew</i></a>
+        <div class="ml-1 inline"></div>
+        <a class="modal-action modal-close btn-floating btn-large waves-effect waves-light red  modalbutton"><i class="material-icons">close</i></a>
     </div>
 </div>

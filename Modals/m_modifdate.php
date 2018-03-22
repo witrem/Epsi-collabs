@@ -1,4 +1,4 @@
-<div id="modalmodifdate" class="modal">
+<div id="modalmodifdate" class="modal modal-fixed-footer">
 
     <div class="modal-content modifdate">
 
@@ -46,92 +46,12 @@
                         <?php Competence::select_print(); ?>
                     </select>
                 </div>
-
             </section>
-            
-            <a onclick='submit()' class="btn-floating btn-large waves-effect waves-light bg-epsi modalbutton"><i class="material-icons">add_alarm</i></a>
-
-            <a class="modal-action modal-close btn-floating btn-large waves-effect waves-light red  modalbutton"><i class="material-icons">close</i></a>
-            
         </div>
     </div>
+    <div class="modal-footer">
+        <a onclick='submit_event()' class="btn-floating btn-large waves-effect waves-light bg-epsi modalbutton"><i class="material-icons">add_alarm</i></a>
+        <div class="ml-1 inline"></div>
+        <a class="modal-action modal-close btn-floating btn-large waves-effect waves-light red  modalbutton"><i class="material-icons">close</i></a>
+    </div>
 </div>
-
-<script>
-                
-    var time_slider = document.getElementById('time-slider');
-
-    noUiSlider.create(time_slider, {
-        start: [11, 13],
-        connect: true,
-        behaviour: 'tap',
-        step: 0.5,
-        range: {
-            'min': 0,
-            'max': 24
-        }
-    });
-
-    var date_slider = document.getElementById('date-slider');
-
-    noUiSlider.create(date_slider, {
-        start: [15],
-        behaviour: 'tap',
-        step: 1,
-        range: {
-            'min': 1,
-            'max': 31
-        }
-    });
-    
-    date_slider.noUiSlider.on('update', function(value) {
-	    document.getElementById('label_day').innerHTML = Math.floor(value) + numberToMonth($("#select_month").val());
-    });
-
-    $('#select_month').change(function(value) {
-	    document.getElementById('label_day').innerHTML = Math.floor(date_slider.noUiSlider.get()) + numberToMonth($("#select_month").val());
-    });
-
-    time_slider.noUiSlider.on('update', function( values, handle ) {
-	    document.getElementById('label_hour').innerHTML = 'Plage horaire : ' + ((Math.floor(values[0]*10)/10) + 'h').replace('.5h', 'h30') + ' - ' + ((Math.floor(values[1]*10)/10) + 'h').replace('.5h', 'h30')
-    });
-
-    function numberToMonth(num) {
-        switch(num) {
-            case null: return ''
-            case "01": return ' Janvier'
-            case "02": return ' Févirer'
-            case "03": return ' Mars'
-            case "04": return ' Avril'
-            case "05": return ' Mai'
-            case "06": return ' Juin'
-            case "07": return ' Juillet'
-            case "08": return ' Aout'
-            case "09": return ' Septembre'
-            case "10": return ' Octobre'
-            case "11": return ' Novembre'
-            case "12": return ' Décembre'
-        }
-    }
-
-    function submit() {
-
-        data  = 'timeD='  + time_slider.noUiSlider.get()[0];
-        data += '&timeF=' + time_slider.noUiSlider.get()[1];
-        data += '&date='  + Math.floor(date_slider.noUiSlider.get());
-        data += '&month=' + $('#select_month').val();
-        data += '&comp='  + $('#select_comp').val();
-
-        console.log(data)
-
-        $.ajax({
-            url: "http://www.epsi-collabs.fr/Modules/AddEvent.php",
-            type: "POST",
-            data: data
-        }).done(function(data) {
-            console.log("pass");
-        });
-
-    }
-
-</script>

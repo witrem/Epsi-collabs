@@ -15,10 +15,8 @@ function search() {
         data += '&campus=' + $("#campus_select").val();
     }
 
-    console.log(data)
-
     $.ajax({
-        url: "http://www.epsi-collabs.fr/Modules/search.php",
+        url: "http://localhost:88/Modules/search.php",
         type: "POST",
         data: data
     }).done(function(data) {

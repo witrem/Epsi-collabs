@@ -113,9 +113,9 @@
                         </tbody>
                     </table>
 
-                    <button id="ins_submit_btn" class="btn-floating btn-large waves-effect waves-light purple darken-3" type="submit">
-                        <i class="material-icons">check</i>
-                    </button>
+                    <button id="ins_submit_btn" class="btn" type="submit">valider</button>
+                    <a href="http://<?php echo $_SERVER['HTTP_HOST'] ?>/login.php" class="ml-1 btn red">annuler</a>
+
                 </form>
             </div>
         </div>

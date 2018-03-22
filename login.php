@@ -86,6 +86,7 @@
 
                 <div class="w-100-center">
                     <button class="btn" type="submit">connexion</button>
+                    <a href="http://<?php echo $_SERVER['HTTP_HOST'] ?>/inscription.php" role="button" class="btn" type="submit">Inscription</a>
                 </div>
 
             </form>

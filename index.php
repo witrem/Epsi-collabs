@@ -90,4 +90,6 @@
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Modals/m_modifdate.php'; ?>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Modals/m_modifcomp.php'; ?>
 
+    <script src="Js/modals.js"></script>
+
 </html>

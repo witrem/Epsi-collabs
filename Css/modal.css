@@ -41,3 +41,45 @@
     }
 
 }
+
+.modal .modal-footer {
+    text-align: center;
+    height: auto;
+}
+
+.modal {
+    bottom: 10%;
+    max-height: 80%;
+}
+
+@media screen and (max-width: 450px) {
+    .modal {
+        bottom: 10px;
+        max-height: calc(90% - 10px);
+        max-width: calc(100% - 10px);
+        width: calc(100% - 10px);
+    }
+}
+
+.profil-img {
+    height: 150px;
+    width: auto;
+}
+
+#calendar-perso-wrapper {
+    position: relative;
+    top: 0;
+    height: 90%;
+    width: 100%;
+}
+
+.lean-overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}

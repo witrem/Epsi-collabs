@@ -14,6 +14,7 @@ nav{position:relative}
 .bg-epsi5{background-color:#F08032}
 .mw-75{max-height:75%}
 .mt-1{margin-top:1em}
+.ml-1{margin-left:1em}
 .txt-center{text-align:center}
 .txt-left{text-align:left}
 .clickable{cursor:pointer}
@@ -26,11 +27,13 @@ nav{position:relative}
 .w-90{width:90%}
 .w-100{width:100%}
 .w-auto{width:auto}
+.p-1{padding:1em}
 .shadow{-webkit-box-shadow:0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
     box-shadow:0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);}
 .fixed{position:fixed}
-.self-centered{margin:0 auto 0 auto}
+.self-centered{margin:initial auto initial auto}
 .row .p-no,.p-no{padding:0}
+.inline{display:inline-block}
 
 /* ===========================================================
     #nav bar

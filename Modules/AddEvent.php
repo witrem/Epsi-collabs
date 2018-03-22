@@ -4,7 +4,7 @@
     session_start();
 
     if (!isset($_POST) || !isset($_POST['timeD']) || !isset($_POST['timeF']) || !isset($_POST['date']) || !isset($_POST['month']) || !isset($_POST['comp'])) {
-        header('location: http://' . $_SERVER['HTTP_HOST'] . '/Erreur/nop.html');
+        echo "00001";
         exit();
     }
 
@@ -28,8 +28,8 @@
         "2018-" . $_POST['month'] . '-' . (DateToDate($_POST['date'])) . ' ' . (explode('.', $_POST['timeF'])[0]) . ":" . MinToMin(explode('.', $_POST['timeF'])[1]) . ':00',
         $_POST['comp'],
         User::get_campus($_SESSION['user']['id'])
-    ))
+    ));
     
-    //timeD = 9.50 & timeF = 13.00 & date = 9 & month = 05 & comp = 2
+    echo $statment->errorCode();
 ?>
 
