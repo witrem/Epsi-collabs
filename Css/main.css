@@ -163,8 +163,31 @@ body{color:#4e4e4e}
     
 }
 
+.message1 {
+    text-align: left;
+  
+}
 
+.boutonmsg {
+    
+    left:50%;
+    margin-bottom: 30px;
+}
 
+.listmsg {
+    
+    width: 100%;
+    height: auto;
+}
+
+.listuser {
+    
+    position: fixed;
+    left:15;
+    top:5;
+    width: 300px;
+    
+}
 
 @media screen and (max-width: 600px) {
     #search {

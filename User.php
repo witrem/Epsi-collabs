@@ -115,20 +115,26 @@
                     </div>
                     <div id="test2" class="col s12">SOON</div>
                     <div id="test3" class="col s12">
+                         <form action="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . '/Modules/addmessagerie.php'; ?>" method="POST">
                         <div class="row">
-                            <form class="col s12">
+                          
                                 <div class="row">
+                                    
                                     <div class="input-field col s12 messagerie">
                                         <i class="material-icons prefix">mode_edit</i>
-                                        <textarea id="icon_prefix2" class="materialize-textarea "></textarea>
+                                       
+                                        <textarea id="icon_prefix2" name="msg" class="materialize-textarea "></textarea>
+                                        <input name="ID_User" type="hidden" value="11"> <!--INSERER ID DE L'USER SELECT -->
                                         <label for="icon_prefix2">Ton message</label>
+                                       
                                     </div>
+                                   
                                 </div>
-                            </form>
+                            
                         </div>
 
-                        <a class="btn-floating btn-large modal-trigger bg-epsi5 modalbutton modal-action modal-close" href="#"><i class="material-icons">email</i></a>
-
+                        <button class="btn-floating btn-large modal-trigger bg-epsi5 modalbutton modal-action modal-close" type="submit"><i class="material-icons">email</i></button>
+                         </form>
                     </div>
                 </div>
 
