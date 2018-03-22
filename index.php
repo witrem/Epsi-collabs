@@ -56,6 +56,7 @@
         ?>
 
     </div>
+    <input type="hidden" value="<?php echo $_SESSION['user']['id']; ?>">
 
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Includes/nav.php" ?>
 
@@ -101,6 +102,8 @@
     <div id="founded-user" class="">
 
     </div>
+
+    <div class="calendar" id="calendar-perso"></div>
 
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Modals/m_profil.php'; ?>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Modals/m_modifprofil.php'; ?>

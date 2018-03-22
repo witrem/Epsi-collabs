@@ -4,8 +4,8 @@ function update_calendar_perso() {
         url: 'http://www.epsi-collabs.fr/Modules/EventFeeder.php',
         type: 'POST',
         data: {
-            arg1: 'perso',
-            arg2: 'perso'
+            arg1: 'user',
+            arg2: $("#my_id").val()
         },
         error: function () {
             alert('there was an error while fetching events!');
@@ -22,37 +22,20 @@ $(document).ready(function () {
         nowIndicator: true,
         editable: false,
         allDaySlot: false,
-        defaultView: 'agendaWeek',
-        header: {
-            left: '',
-            center: 'title',
-            right: 'today prev,next',
-        },
-        views: {
-            unJour: {
-                type: 'agendaDay'
+        defaultView: {
+            type: 'list',
+            duration: {
+                days: 4
             },
-            deuxJour: {
-                type: 'agenda',
-                duration: {
-                    days: 2
-                },
-            },
-            quatreJour: {
-                type: 'agenda',
-                duration: {
-                    days: 4
-                },
-            },
-            semaine: {
-                type: 'agendaWeek'
+            header: {
+                left: '',
+                center: 'title',
+                right: 'today prev,next',
             }
         }
     });
 
-    //update_view_calendar();
-
-    //update_calendar_perso();
+    update_calendar_perso();
 
 })
 
@@ -67,7 +50,7 @@ function search() {
     console.log('pass')
     $("#search").css('overflow', 'hidden');
 
-    data = ''; 
+    data = '';
 
     if ($("#comp_select").val() != null && $("#comp_select").val() != 0) {
         data += 'comp=' + $("#comp_select").val();
@@ -97,7 +80,7 @@ function search() {
         url: "http://www.epsi-collabs.fr/Modules/search.php",
         type: "POST",
         data: data
-    }).done(function(data) {
+    }).done(function (data) {
         $("#founded-user").html(data);
         $("#search_btn").attr("onclick", "cancel()");
         $("#search_btn").text("Annuler");
@@ -143,14 +126,14 @@ function search_filter_update() {
     if ($("#user_search").val() != '') {
         filter += $("#user_search").val();
     }
-    
+
     $('#filter-list').text(filter);
 
 }
 
 $(document).ready(function () {
 
-    $('#filter-list').on('click', function() {
+    $('#filter-list').on('click', function () {
         if ($("#search").css('height') != '83px') {
             $("#search").css('height', '83px')
             $("#search").css('overflow', 'hidden');
@@ -160,7 +143,7 @@ $(document).ready(function () {
         }
     })
 
-    $('#filter-edit-btn').on('click', function() {
+    $('#filter-edit-btn').on('click', function () {
         if ($("#search").css('height') != '83px') {
             $("#search").css('height', '83px')
             $("#search").css('overflow', 'hidden');
@@ -170,13 +153,12 @@ $(document).ready(function () {
         }
     })
 
-    $('.filter-value').change(function() {
+    $('.filter-value').change(function () {
 
         search_filter_update()
-        
+
     })
 
     search_filter_update()
 
 })
-
