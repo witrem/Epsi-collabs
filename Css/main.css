@@ -179,6 +179,14 @@ nav{position:relative}
     
 }
 
+.listuser {
+
+    position:fixed;
+    left:15;
+    top:5;
+    width:300px
+}
+
 .profiluser {
     
     width: 60%;

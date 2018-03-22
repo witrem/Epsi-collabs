@@ -15,15 +15,15 @@ if (isset($_POST['msg']) && isset($_POST['ID_User'])) {
     $req = $db->prepare("INSERT INTO `groupes` (`ID_Groupes`) VALUES (NULL)");
     $req->execute();
     $idg = $db->lastInsertId();
+  
  
- 
-    $req = $db->prepare("INSERT INTO `invitations` (`ID_User`, `ID_Groupes`, `proprio`, `Etat_Invitation`) VALUES ( :id_user, :idg )");
+    $req = $db->prepare("INSERT INTO `invitations` (`ID_User`, `ID_Groupes`) VALUES ( :id_user, :idg )");
     $req->bindParam(':id_user', $iduser);
     $req->bindParam(':idg', $idg);
     $req->execute();
     
  
-    $req = $db->prepare("INSERT INTO `invitations` (`ID_User`, `ID_Groupes`, `proprio`, `Etat_Invitation`) VALUES ( :id_user, :idg )");
+    $req = $db->prepare("INSERT INTO `invitations` (`ID_User`, `ID_Groupes`) VALUES ( :id_user, :idg )");
     $req->bindParam(':id_user', $idsession);
     $req->bindParam(':idg', $idg);
     $req->execute();

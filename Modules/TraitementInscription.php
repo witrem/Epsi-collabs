@@ -31,6 +31,6 @@ if (isset($_POST)) {
     }
     
     else {
-        header('location: http://' . $_SERVER['HTTP_HOST'] . '/Modules/inscription.php');
+        header('location: http://' . $_SERVER['HTTP_HOST'] . '/inscription.php');
     }
 }
