@@ -39,6 +39,8 @@ if (isset($_POST['msg']) && isset($_POST['ID_User'])) {
         $req->bindParam(':idg', $idg);
         $req->execute();
 
+    } else {
+        $idg = $idg['id_Groupes'];
     }
 
     //
