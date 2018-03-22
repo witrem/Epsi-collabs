@@ -53,7 +53,7 @@ if (!is_login()) {
         $result = User::get_user_info($id);
 
     ?>
-    <input id="id_User" type="hidden" value='<?php echo $result['id_Personne']?>'>
+        <input id="id_User" type="hidden" value='<?php echo $result[' id_Personne ']?>'>
         <div id="login-wrapper" class="card mh-auto profiluser card-responsive">
             <div class="row alignement">
                 <div class="col s12 p-no">
@@ -160,28 +160,30 @@ if (!is_login()) {
 
                         </div>
                     </div>
-                    
+
                     <div id="calendrier" class="col s12">
                         <script type="text/javascript" src="Js/user.js"></script>
                         <div class="mt-1 calendar" id="user-calendar"></div>
                     </div>
 
                     <div id="contact" class="col s12">
-                        <div class="row">
-                            <form class="col s12">
+                        <form action="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . '/Modules/addmessagerie.php'; ?>" method="POST">
+                        
+                            <div class="row">
                                 <div class="row">
                                     <div class="input-field col s12 messagerie">
                                         <i class="material-icons prefix">mode_edit</i>
-                                        <textarea id="icon_prefix2" class="materialize-textarea "></textarea>
+                                        <textarea id="icon_prefix2" name="msg" class="materialize-textarea "></textarea>
+                                        <input name="ID_User" type="hidden" value="<?php echo $id ?>">
                                         <label for="icon_prefix2">Ton message</label>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
+                            </div>
 
-                        <a class="btn-floating btn-large modal-trigger bg-epsi5 modalbutton modal-action modal-close" href="#">
-                            <i class="material-icons">email</i>
-                        </a>
+                            <button class="btn-floating btn-large modal-trigger bg-epsi5 modalbutton modal-action modal-close" type="submit">
+                                <i class="material-icons">email</i>
+                            </button>
+                        </form>
 
                     </div>
 
@@ -189,12 +191,13 @@ if (!is_login()) {
             </div>
         </div>
 
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/Modals/m_profil.php'; ?>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/Modals/m_modifprofil.php'; ?>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/Modals/m_modifdate.php'; ?>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/Modals/m_modifcomp.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/Modals/m_profil.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/Modals/m_modifprofil.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/Modals/m_modifdate.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/Modals/m_modifcomp.php'; ?>
 
-    <script src="Js/modals.js"></script>
+        <script src="Js/modals.js"></script>
 
 </body>
+
 </html>
