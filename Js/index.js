@@ -131,6 +131,14 @@ function search_filter_update() {
 
 $(document).ready(function () {
 
+    $('#filter-list').on('click', function() {
+        if ($("#search").css('height') != '83px') {
+            $("#search").css('height', '83px')
+        } else {
+            $("#search").css('height', 'auto');
+        }
+    })
+
     $('#filter-edit-btn').on('click', function() {
         if ($("#search").css('height') != '83px') {
             $("#search").css('height', '83px')
@@ -144,6 +152,8 @@ $(document).ready(function () {
         search_filter_update()
         
     })
+
+    filter-list
 
     search_filter_update()
 
