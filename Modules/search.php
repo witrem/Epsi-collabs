@@ -61,11 +61,13 @@
                 $request .= ' AND ';
             }
 
-            $request .= "pe . Email LIKE :user";
+            $request .= "pe.Email LIKE :perso";
 
-            $data[':user'] = "\"%" . $_POST['user'] . "%\"";
+            $data[':perso'] = "%" . $_POST['user'] . "%";
 
         }
+
+        var_dump($data);
 
         $db = Data_base::connect();
 
@@ -74,6 +76,10 @@
         $statment->execute($data);
 
         $answer = $statment->fetchAll(PDO::FETCH_ASSOC);
+
+        var_dump($statment);
+
+        echo $statment->errorCode();
 
         foreach($answer as &$user) {
 
