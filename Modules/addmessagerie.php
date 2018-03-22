@@ -50,9 +50,8 @@ if (isset($_POST['msg']) && isset($_POST['ID_User'])) {
     $req->bindParam(':ID_Createur', $idsession);
     $req->bindParam(':ID_Groupes', $idg);
     $req->execute();
-}
 
-exit();
+}
  
 header('location: http://' . $_SERVER['HTTP_HOST'] . '/messagerie.php');
 ?>
