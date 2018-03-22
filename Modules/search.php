@@ -6,7 +6,7 @@
 
         $first = true;
 
-        $request = "SELECT pe . Nom, pe . id_Personne, pe . Photo, pe . Prenom, pe . Niveau, ca . Nom as campus_name, c . Nom as Nom_Competence FROM personnes pe
+        $request = "SELECT pe . Nom, pe . id_Personne, pe . Photo, pe . Prenom, pe . Niveau, ca . Nom as campus_name FROM personnes pe
             join propose pr on pe . id_Personne = pr . id_Personne
             join competences c on c . id_Competence = pr . id_Competence
             join campus ca on ca . id_Campus = pe . id_Campus
@@ -69,7 +69,7 @@
 
         $db = Data_base::connect();
 
-        $statment = $db->prepare($request);
+        $statment = $db->prepare($request . ' GROUP BY pe . id_Personne');
 
         $statment->execute($data);
 
