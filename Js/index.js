@@ -106,7 +106,7 @@ function search() {
 
 function cancel() {
     $("#founded-user").html('');
-    $("#search_btn").attr("onclick", "cancel()");
+    $("#search_btn").attr("onclick", "send()");
     $("#search_btn").text("Rechercher");
     $("#search_btn").attr("class", "btn clickable");
 }
