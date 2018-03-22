@@ -16,7 +16,7 @@ function search() {
     }
 
     $.ajax({
-        url: "http://localhost:88/Modules/search.php",
+        url: "http://www.epsi-collabs.fr/Modules/search.php",
         type: "POST",
         data: data
     }).done(function(data) {

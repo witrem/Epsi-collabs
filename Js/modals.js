@@ -68,7 +68,7 @@ function submit_event() {
     console.log(data)
 
     $.ajax({
-        url: "http://localhost:88/Modules/AddEvent.php",
+        url: "http://www.epsi-collabs.fr/Modules/AddEvent.php",
         type: "POST",
         data: data
     }).done(function(data) {
@@ -96,7 +96,7 @@ function submit_profilmodif() {
     console.log(data)
 
     $.ajax({
-        url: "http://localhost:88/Modules/Modifuser.php",
+        url: "http://www.epsi-collabs.fr/Modules/Modifuser.php",
         type: "POST",
         data: data
     }).done(function(data) {
@@ -122,7 +122,7 @@ function submit_compmodif() {
     console.log(data)
 
     $.ajax({
-        url: "http://localhost:88/Modules/competencegestion.php",
+        url: "http://www.epsi-collabs.fr/Modules/competencegestion.php",
         type: "POST",
         data: data
     }).done(function(data) {

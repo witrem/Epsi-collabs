@@ -3,7 +3,7 @@ function update_campus_calendar() {
     campus = $("#campus_select").val();
     comp = $("#comp_select").val();
     $('#campus-calendar').fullCalendar('addEventSource', {
-        url: 'http://localhost:88/Modules/EventFeeder.php',
+        url: 'http://www.epsi-collabs.fr/Modules/EventFeeder.php',
         type: 'POST',
         data: {
             arg1: comp,

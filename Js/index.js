@@ -1,7 +1,7 @@
 function update_calendar_perso() {
     $('#calendar-perso').fullCalendar('removeEventSources');
     $('#calendar-perso').fullCalendar('addEventSource', {
-        url: 'http://localhost:88/Modules/EventFeeder.php',
+        url: 'http://www.epsi-collabs.fr/Modules/EventFeeder.php',
         type: 'POST',
         data: {
             arg1: 'perso',
