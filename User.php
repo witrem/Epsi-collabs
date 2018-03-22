@@ -168,7 +168,7 @@ if (!is_login()) {
 
                     <div id="contact" class="col s12">
                         <form action="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . '/Modules/addmessagerie.php'; ?>" method="POST">
-                        
+
                             <div class="row">
                                 <div class="row">
                                     <div class="input-field col s12 messagerie">
@@ -180,7 +180,7 @@ if (!is_login()) {
                                 </div>
                             </div>
 
-                            <button class="btn-floating btn-large modal-trigger bg-epsi5 modalbutton modal-action modal-close" type="submit">
+                            <button class="btn-floating btn-large bg-epsi5 modalbutton" type="submit">
                                 <i class="material-icons">email</i>
                             </button>
                         </form>
