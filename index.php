@@ -102,8 +102,10 @@
     <div id="founded-user" class="">
 
     </div>
-
-    <div class="calendar" id="calendar-perso"></div>
+    
+    <div id="calendar-perso-wrapper">
+        <div class="calendar" id="calendar-perso"></div>
+    </div>
 
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Modals/m_profil.php'; ?>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Modals/m_modifprofil.php'; ?>

@@ -22,17 +22,20 @@ $(document).ready(function () {
         nowIndicator: true,
         editable: false,
         allDaySlot: false,
-        defaultView: {
-            type: 'list',
-            duration: {
-                days: 4
-            },
-            header: {
-                left: '',
-                center: 'title',
-                right: 'today prev,next',
+        header: {
+            left: '',
+            center: 'title',
+            right: 'today prev,next',
+        },
+        views: {
+            deuxJour: {
+                type: 'list',
+                duration: {
+                    days: 7
+                },
             }
-        }
+        },
+        defaultView: 'custom'
     });
 
     update_calendar_perso();
@@ -50,7 +53,7 @@ function search() {
     console.log('pass')
     $("#search").css('overflow', 'hidden');
 
-    data = '';
+    data = ''; 
 
     if ($("#comp_select").val() != null && $("#comp_select").val() != 0) {
         data += 'comp=' + $("#comp_select").val();
@@ -80,7 +83,7 @@ function search() {
         url: "http://www.epsi-collabs.fr/Modules/search.php",
         type: "POST",
         data: data
-    }).done(function (data) {
+    }).done(function(data) {
         $("#founded-user").html(data);
         $("#search_btn").attr("onclick", "cancel()");
         $("#search_btn").text("Annuler");
@@ -126,14 +129,14 @@ function search_filter_update() {
     if ($("#user_search").val() != '') {
         filter += $("#user_search").val();
     }
-
+    
     $('#filter-list').text(filter);
 
 }
 
 $(document).ready(function () {
 
-    $('#filter-list').on('click', function () {
+    $('#filter-list').on('click', function() {
         if ($("#search").css('height') != '83px') {
             $("#search").css('height', '83px')
             $("#search").css('overflow', 'hidden');
@@ -143,7 +146,7 @@ $(document).ready(function () {
         }
     })
 
-    $('#filter-edit-btn').on('click', function () {
+    $('#filter-edit-btn').on('click', function() {
         if ($("#search").css('height') != '83px') {
             $("#search").css('height', '83px')
             $("#search").css('overflow', 'hidden');
@@ -153,12 +156,13 @@ $(document).ready(function () {
         }
     })
 
-    $('.filter-value').change(function () {
+    $('.filter-value').change(function() {
 
         search_filter_update()
-
+        
     })
 
     search_filter_update()
 
 })
+

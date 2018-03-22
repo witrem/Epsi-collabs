@@ -138,9 +138,17 @@ nav{position:relative}
     margin: 2em 20%;
 }
 
+#calendar-perso-wrapper {
+    width: calc(60% - 20px);
+    margin: 2em 20%;
+}
 
 @media screen and (max-width: 992px) {
     #founded-user {
+        width: calc(96% - 20px);
+        margin: 2em 2%;
+    }
+    #calendar-perso-wrapper {
         width: calc(96% - 20px);
         margin: 2em 2%;
     }
@@ -148,6 +156,10 @@ nav{position:relative}
 
 @media screen and (max-width: 600px) {
     #founded-user {
+        width: 100%;
+        margin: 2em 0;
+    }
+    #calendar-perso-wrapper {
         width: 100%;
         margin: 2em 0;
     }
