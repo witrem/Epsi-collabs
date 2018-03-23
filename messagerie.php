@@ -47,17 +47,11 @@
         $resultat = $req->fetchAll();
     ?>
         <div class="listuser">
-
-
             <div id="login-wrapper" class="card mh-auto">
                 <div class="row alignement">
-
                     <div class="col s12">
-
                         <div id="test1" class="col s12">
-
                             <table>
-
                                 <thead>
                                     <tr>
                                         <th>Mes Messages Privés</th>
@@ -67,6 +61,7 @@
                                 <tbody>
 
                                 <?php
+
                                     foreach ($resultat as $ligne) {
 
                                         $idg = $ligne['ID_Groupes'];
@@ -84,7 +79,6 @@
                                     }
                                 ?>
 
-
                             </table>
                         </div>
                     </div>
@@ -97,28 +91,18 @@
                 
             } else {
         ?>
-            <div class="modal-content inscription">
-
-
+            <div id="message-wrapper" class="modal-content">
                 <div id="login-wrapper" class="card mh-auto">
                     <div class="row alignement">
-
                         <div class="col s12">
-
                             <div id="test1" class="col s12">
-
-
-
-
                                 <table class="listmsg">
-
                                     <thead>
                                         <tr>
                                             <th>Messages</th>
 
                                         </tr>
                                     </thead>
-
                                     <tbody>
 
 
