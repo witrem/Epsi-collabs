@@ -67,6 +67,7 @@ nav{position:relative}
     transition-duration: 0.2s;
     color: #fff;
     font-size: 120%;
+    z-index: 300;
 }
 
 #slide_menu ul  { list-style: none; margin: 0; padding: 0;}
