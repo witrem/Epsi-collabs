@@ -1,0 +1,16 @@
+.listebouton {
+    position:absolute;
+    right: 10px;
+    top : 50%;    
+}
+
+.liste {    
+    position: relative;
+    width: 70%;
+    left:15%;
+}
+
+.collection{
+    margin-left:10%;
+    margin-right:10%;
+}
