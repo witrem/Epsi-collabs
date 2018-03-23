@@ -50,10 +50,8 @@ if (!is_login()) {
 
             echo '<form action="Modules/supparticle.php" method="POST">';
             echo '<button class="waves-effect waves-light btn bg-epsi5" type="submit"><i class="material-icons right">close</i>Supprimer</button>';
-            echo '<input name="Modules/supparticle" type="hidden" value="' . $ligne['id_Article'] . '">';
+            echo '<input name="supparticle" type="hidden" value="' . $ligne['id_Article'] . '">';
             echo '</form>';
-
-
 
             echo '<form action="edition.php" method="POST">';
             echo '<input name="editarticle" type="hidden" value="' . $ligne['id_Article'] . '">';

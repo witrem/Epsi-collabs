@@ -1,12 +1,22 @@
-<?php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/Includes/main.php';
-session_start();
+<?php 
+    include_once $_SERVER['DOCUMENT_ROOT'] . '/Includes/main.php';
+    session_start();
 
-if (!is_login()) {
-    header('location: http://' . $_SERVER['HTTP_HOST'] . '/login.php');
-}
+    // Afficher les erreurs à l'écran
+    ini_set('display_errors', 1);
 
+    if (!is_login()) {
+        header('location: http://' . $_SERVER['HTTP_HOST'] . '/login.php');
+        exit();
+    }
+
+    if (!User::is_prof()) {
+        header('location: http://' . $_SERVER['HTTP_HOST']);
+        exit();
+    }
+    
 ?>
+<!DOCTYPE html>
 <html lang="fr">
     <head>
 
@@ -14,8 +24,9 @@ if (!is_login()) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, userscalable=no">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-        <link rel="stylesheet" href="Css/main.css">
-        <link rel="stylesheet" href="Css/modal.css">
+        <link rel="stylesheet" href="/Css/main.css">
+        <link rel="stylesheet" href="/Css/modal.css">
+        <link rel="stylesheet" href="/Css/article.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
@@ -40,12 +51,11 @@ if (!is_login()) {
 
         </script>
 
-        <div id="login-wrapper" class="card mh-auto inscription"> 
+        <div id="login-wrapper" class="card mh-auto inscription card-responsive"> 
 
             <div class="row alignement">
                 <h4>Parametrage</h4>
                 <div class="col s12">
-
 
                     <table class="infoprofil">
 
@@ -53,26 +63,20 @@ if (!is_login()) {
 
                             <tr>
                                 <td>Compétences existante</td>
-
                                 <td>
                                     <div class="input-field col s12">
                                         <select>
 
                                             <?php
-                                            foreach ($resultat as $competence) {
-
-                                                echo "<option disabled>", $competence['Nom'], "</option>";
-                                            }
+                                                Competence::select_print();
                                             ?>
-
-
                                         </select>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Ajouter Compétence</td>
 
+                                <td>Ajouter Compétence</td>
                                 <td>
                                     <form action="TraitementAdmin.php" method="POST">
                                         <div class="input-field inline">
@@ -81,7 +85,6 @@ if (!is_login()) {
                                             <button class="btn waves-effect waves-light bg-epsi3" type="submit">Créer
                                                 <i class="material-icons right">add</i>
                                             </button>
-
                                         </div>
                                     </form>
                                 </td>
@@ -105,7 +108,8 @@ if (!is_login()) {
                             </tr>
                             <tr>
                                 <td>Modifier Niveau Etudiant</td>
-                                <td><form action="TraitementAdmin.php" method="POST">
+                                <td>
+                                    <form action="TraitementAdmin.php" method="POST">
                                         <div class="input-field inline">
 
 
@@ -127,15 +131,15 @@ if (!is_login()) {
 
                                         </div>
                                     </form>
-                                 <a class="btn-floating btn-large  bg-epsi4 modalbutton" href="Admin/listarticle_admin.php"><i class="material-icons">art_track</i></a>
+
+                                    <a class="mt-1 btn bg-epsi4" href="listarticle_admin.php">Gestion des Articles</a>
+
                                 </td>
-                                    
                             </tr>
-
                         </tbody>
-
                     </table>
-
                 </div>
             </div>
+        </div>
     </body>
+</html>
