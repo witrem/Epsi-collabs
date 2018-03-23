@@ -59,8 +59,9 @@ nav{position:relative}
     position: fixed;
     text-align: center;
     width: 210px;
-    height: calc(100vh - 56px);
-    top: 56px;
+    height: 100vh;
+    top: 0px;
+    padding-top: 56px;
     left: -210px;
     z-index: 1000;
     transition-duration: 0.2s;
