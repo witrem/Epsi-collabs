@@ -84,10 +84,6 @@ if (!is_login()) {
 
                 var data = CKEDITOR.instances.editor1.getData();
 
-
-
-
-
             </script>    
 
 

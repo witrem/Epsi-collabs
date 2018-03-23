@@ -14,3 +14,23 @@
     margin-left:10%;
     margin-right:10%;
 }
+
+#select-comp-article {
+    width: 80vw;
+}
+
+#select-wrapper {
+    width: 100vw;
+    text-align: center;
+}
+
+#list-article-wrapper {
+    width: 80vw;
+    margin: 1em auto 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+    #list-article-wrapper {
+        width: 95vw;
+    }
+}
