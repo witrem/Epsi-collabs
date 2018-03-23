@@ -38,15 +38,15 @@ if (!is_login()) {
             echo '<li class="collection-item liste">';
             echo '<b><h4>' . $ligne['Titre'] . '</b></h4><br>';
             echo $ligne['Description'] . '<br>';
-            echo '<form action="article.php" method="GET">';
+            echo '<form action="/article.php" method="GET">';
             echo '<input name="article" type="hidden" value="' . $ligne['id_Article'] . '">';
             echo '<button class="waves-effect waves-light btn listebouton bg-epsi" type="submit"><i class="material-icons right">arrow_forward</i>Lire la suite</button>';
             echo '</form>';
-            echo '<form action="supparticle.php" method="POST">';
+            echo '<form action="/Modules/supparticle.php" method="POST">';
 
             echo '<input name="supparticle" type="hidden" value="' . $ligne['id_Article'] . '">';
             echo '</form>';
-            echo '<form action="edition.php" method="POST">';
+            echo '<form action="/edition.php" method="POST">';
             echo '<input name="editarticle" type="hidden" value="' . $ligne['id_Article'] . '">';
             echo '<button class="waves-effect waves-light btn bg-epsi2" type="submit"><i class="material-icons right">edit</i>Editer</button>';
 
