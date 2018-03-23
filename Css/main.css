@@ -141,6 +141,7 @@ nav{position:relative}
 #calendar-perso-wrapper {
     width: calc(60% - 20px);
     margin: 2em 20%;
+    height: 700px;
 }
 
 @media screen and (max-width: 992px) {

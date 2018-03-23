@@ -23,8 +23,8 @@ $(document).ready(function () {
         editable: false,
         allDaySlot: false,
         header: {
-            left: '',
-            center: 'title',
+            left: 'title',
+            center: '',
             right: 'today prev,next',
         },
         views: {

@@ -3,8 +3,6 @@
     include_once $_SERVER['DOCUMENT_ROOT'] . "/Includes/main.php";
 
     session_start();
-
-    
     
     if (!is_login()) {
         header('location: http://' . $_SERVER['HTTP_HOST'] . '/login.php');
